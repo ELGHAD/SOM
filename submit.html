@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Submit Your Music — Sounds of Morocco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="brand" href="index.html"
+          ><img src="assets/img/logo.png" alt="Sounds of Morocco" /><span
+            >Sounds of Morocco</span
+          ></a
+        >
+        <nav class="menu" id="menu">
+          <a href="about.html">About</a><a href="releases.html">Releases</a
+          ><a href="partners.html">Partners</a><a href="music.html">Music</a
+          ><a href="news.html">News</a><a href="merch.html">Merch</a
+          ><a class="cta-submit" href="submit.html">Submit</a>
+        </nav>
+        <button class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container card reveal">
+        <div class="section-title">
+          <span class="pill">Submit Your Music</span>
+        </div>
+        <form
+          data-email="demos@soundsofmorocco.com"
+          data-subject="Music Submission"
+        >
+          <div class="row">
+            <div>
+              <label for="fullname">Full Name</label>
+              <input id="fullname" name="Full Name" required />
+            </div>
+            <div>
+              <label for="artist">Artist Name</label>
+              <input id="artist" name="Artist Name" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" required />
+            </div>
+            <div>
+              <label for="country">Country</label>
+              <input id="country" name="Country" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="genre">Genre</label>
+              <select id="genre" name="Genre">
+                <option>Electronic</option>
+                <option>Gnawa</option>
+                <option>Chaâbi</option>
+                <option>Fusion</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="link"
+                >Track Link (Drive / WeTransfer / YouTube / SoundCloud)</label
+              >
+              <input
+                id="link"
+                name="Track Link"
+                type="url"
+                required
+                placeholder="https://…"
+              />
+            </div>
+          </div>
+
+          <label for="message">Message (optional)</label>
+          <textarea
+            id="message"
+            name="Message"
+            rows="4"
+            placeholder="Tell us about the project…"
+          ></textarea>
+
+          <label
+            ><input type="checkbox" required name="Terms" /> I agree to the
+            terms of the demo policy.</label
+          >
+          <button class="btn btn-primary" type="submit">
+            Submit Your Music
+          </button>
+          <p class="help">
+            This form opens your email client with your info (fallback). Replace
+            with EmailJS or a server endpoint to automate.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <p class="footer-subtitle">
+            A cultural project and independent label
+          </p>
+          <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="artists.html">Artists</a>
+            <a href="releases.html">Releases</a>
+            <a href="partners.html">Partners</a>
+            <a href="news.html">News</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Stream On</h4>
+          <nav class="footer-nav">
+            <a href="#spotify">Spotify</a>
+            <a href="#apple-music">Apple Music</a>
+            <a href="#youtube-music">YouTube Music</a>
+            <a href="#bandcamp">Bandcamp</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
+            >hello@soundsofmorocco.com</a
+          >
+          <p class="footer-contact-text">
+            Reach out for collaborations, bookings, or inquiries. We're here to
+            connect.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon instagram"
+              ><span class="visually-hidden">Instagram</span></a
+            >
+            <a href="#" class="social-icon tiktok"
+              ><span class="visually-hidden">TikTok</span></a
+            >
+            <a href="#" class="social-icon youtube"
+              ><span class="visually-hidden">YouTube</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Sounds of Morocco. All rights reserved.</p>
+          <nav class="legal-nav">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
