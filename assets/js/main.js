@@ -84,3 +84,128 @@
   // Analytics placeholder (replace with GA/Matomo script)
   // console.info('Analytics ready — replace with GA/Matomo code.');
 })();
+
+  /* ===== ABOUT PAGE ONLY ===== */
+  if (document.body.classList.contains('about')) {
+
+    // Smooth scroll for local subnav anchors
+    document.querySelectorAll('.subnav a[href^="#"], a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length > 1 && document.querySelector(id)){
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null, "", id);
+        }
+      });
+    });
+
+    // Sticky subnav active state
+    const sections = document.querySelectorAll('.section[id]');
+    const subLinks = document.querySelectorAll('.subnav a');
+    const setActive = id=>{
+      subLinks.forEach(l=>l.classList.toggle('is-active', l.getAttribute('href')==='#'+id));
+    };
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ setActive(en.target.id); } });
+    }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+    sections.forEach(s=>obs.observe(s));
+
+    // Click-to-expand for "Values" list
+    document.querySelectorAll('#values .values-list li').forEach(li=>{
+      li.addEventListener('click', ()=>{
+        li.classList.toggle('open');
+        if(!li.dataset.expanded){
+          li.dataset.expanded = "1";
+          li.innerHTML = `<strong>${li.textContent}</strong>
+            <p class="muted" style="margin:.35rem 0 0; color:rgba(255,255,255,.82)">
+              We live this value through fair deals, mentorship, and community programs.
+            </p>`;
+        }else{
+          li.removeAttribute('data-expanded');
+          li.textContent = li.querySelector('strong').textContent;
+        }
+      });
+    });
+
+    // Lightbox for any .media img or image inside .card-label/.card-cultural
+    const lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.innerHTML = '<img alt=""><button aria-label="Close" style="position:absolute;top:22px;right:22px;background:transparent;border:none;color:#fff;font-size:28px;cursor:pointer">&times;</button>';
+    document.body.appendChild(lb);
+    lb.addEventListener('click', ()=>lb.classList.remove('active'));
+    const lbImg = lb.querySelector('img');
+    document.querySelectorAll('.media img, .card-label img, .card-cultural img').forEach(img=>{
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', ()=>{
+        lbImg.src = img.src;
+        lb.classList.add('active');
+      });
+    });
+
+    // Team card quick modal (simple dialog)
+    const dlg = document.createElement('dialog');
+    dlg.style.padding = '0'; dlg.style.border = 'none'; dlg.style.borderRadius = '16px';
+    dlg.style.width = 'min(640px, 92vw)';
+    dlg.innerHTML = `
+      <div style="background:#0b0b12;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08)">
+          <strong>Team</strong>
+          <span class="muted" style="font-size:.9rem; color:rgba(255,255,255,.7)">— Bio</span>
+          <button id="xTeam" style="margin-left:auto;background:transparent;border:none;color:#fff;font-size:24px;cursor:pointer">&times;</button>
+        </div>
+        <div id="teamBody" style="padding:18px;color:#fff"></div>
+      </div>`;
+    document.body.appendChild(dlg);
+    dlg.querySelector('#xTeam').addEventListener('click', ()=>dlg.close());
+
+    document.querySelectorAll('.team').forEach(card=>{
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', ()=>{
+        const name = card.querySelector('h3')?.textContent || 'Team';
+        const role = card.querySelector('.muted, .sub')?.textContent || '';
+        const img  = card.querySelector('img')?.src || '';
+        dlg.querySelector('#teamBody').innerHTML = `
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start">
+            <img src="${img}" alt="${name}" style="width:120px;height:120px;border-radius:12px;object-fit:cover;border:4px solid var(--blue-royal)">
+            <div>
+              <h3 style="margin:0 0 6px">${name}</h3>
+              <p class="muted" style="margin:0 0 12px;color:rgba(255,255,255,.75)">${role}</p>
+              <p style="color:rgba(255,255,255,.85)">Short bio goes here. Add achievements, responsibilities, and influences.</p>
+              <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+                <a class="btn btn-primary" href="mailto:contact@soundsofmorocco.com"><i class="fa-regular fa-envelope"></i> Contact</a>
+                <a class="btn btn-outline" href="#" onclick="event.preventDefault()"><i class="fa-brands fa-instagram"></i> Follow</a>
+              </div>
+            </div>
+          </div>`;
+        dlg.showModal();
+      });
+    });
+
+    // Back-to-top FAB
+    const fab = document.createElement('div');
+    fab.className = 'fab';
+    fab.innerHTML = `<a class="btn" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>`;
+    document.body.appendChild(fab);
+    const showFab = ()=> (window.scrollY>600) ? fab.classList.add('show') : fab.classList.remove('show');
+    showFab(); window.addEventListener('scroll', showFab);
+  }
+
+  // About: tap/hover to expand value (adds a small caption once)
+if (document.body.classList.contains('about')) {
+  document.querySelectorAll('#values .fancy-values li').forEach(li=>{
+    li.addEventListener('click', ()=>{
+      li.classList.toggle('open');
+      if(!li.dataset.expanded){
+        li.dataset.expanded = "1";
+        li.innerHTML = `<strong>${li.textContent}</strong>
+          <p class="muted" style="margin:.35rem 0 0; color:rgba(255,255,255,.82)">
+            We live this through fair deals, mentorship, and community programs.
+          </p>`;
+      } else {
+        li.removeAttribute('data-expanded');
+        li.textContent = li.querySelector('strong').textContent;
+      }
+    });
+  });
+}

@@ -176,23 +176,40 @@ h3 {
 }
 
 /* Mobile menu */
+/* Mobile menu (one source of truth) */
 @media (max-width: 960px) {
   .menu {
     display: none;
-    position: absolute;
-    inset: 60px 0 auto 0;
-    background: var(--sand);
+    position: fixed;             /* keeps it attached to the viewport */
+    top: var(--header-h, 70px);  /* sits below the sticky header */
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: #000;            /* ← keep it black */
     flex-direction: column;
     padding: 1rem 1.2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  .menu.open {
-    display: flex;
+  .menu.open { display: flex; }
+
+  .menu a {
+    color: #fff;                 /* white links on black bg */
   }
-  .burger {
-    display: flex;
+  .menu a:hover,
+  .menu a[aria-current="page"] {
+    color: #ffcc00;              /* highlight (optional) */
+  }
+
+  .burger { display: flex; }
+  .burger span {
+    background: #fff;            /* burger lines visible on black */
+  }
+
+  .header {
+    background: #000 !important; /* ensure header stays black too */
   }
 }
+
 
 /* Hero */
 .hero {
@@ -1111,6 +1128,493 @@ body.home .after-hero {
   pointer-events: none;
 }
 
+/************ ABOUT PAGE — scoped styles ************/
+body.about { color: var(--white); }
+
+/* Make content readable on the dark gradient */
+body.about .after-hero { background: linear-gradient(180deg,#000 0%,#1a1a8c 45%,#000 100%); }
+body.about .section { padding: 72px 0 40px; }
+body.about h1, body.about h2, body.about h3 { color: var(--white); }
+body.about .section-intro { color: rgba(255,255,255,.85); }
+
+/* Page hero */
+body.about .hero--about {
+  padding: 72px 0 28px;
+  text-align: center;
+  background:
+    radial-gradient(60% 140% at 80% -10%, rgba(255,66,25,.15), transparent 60%),
+    radial-gradient(60% 120% at 10% 10%, rgba(51,51,255,.18), transparent 55%);
+}
+body.about .display { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+body.about .lead { max-width: 880px; margin: 8px auto 14px; color: rgba(255,255,255,.9); }
+
+/* Local subnav (sticky, pill links, active state) */
+body.about .subnav{
+  position: sticky; top: calc(var(--header-h,70px) + 8px); z-index: 20;
+  display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center;
+  padding:.55rem; margin-top:.8rem;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+}
+body.about .subnav a{
+  color: var(--white);
+  opacity: .9;
+  padding:.45rem .9rem;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  transition: transform .2s ease, background .2s ease, opacity .2s ease, color .2s ease;
+}
+body.about .subnav a:hover{ opacity:1; background: rgba(255,255,255,.08); transform: translateY(-1px); }
+body.about .subnav a.is-active{ background: var(--saffron); color:#111; border-color: transparent; font-weight:700; }
+
+/* Dark cards on About (high contrast) */
+body.about .card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  color: var(--white);
+}
+body.about .card p{ color: rgba(255,255,255,.92); }
+
+/* Image cards you already use */
+body.about .card-label, body.about .card-cultural{
+  color:#fff; border:none; box-shadow: var(--shadow);
+}
+body.about .card-label::before, body.about .card-cultural::before{
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.28));
+}
+
+/* Checklists, bullets */
+body.about .checklist li{ color: rgba(255,255,255,.95); }
+body.about .checklist li::before{
+  content:""; display:inline-block; width:.9rem; height:.9rem; margin-right:.5rem; vertical-align:middle;
+  border-radius:50%; background: conic-gradient(from 90deg, var(--saffron), var(--blue-royal));
+  box-shadow: 0 0 0 2px rgba(255,255,255,.08);
+}
+
+/* Values list (click to expand) */
+body.about .values-list{ display:grid; gap:12px; margin-top:12px; }
+body.about .values-list li{
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px; padding:14px 16px; cursor:pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+body.about .values-list li:hover{ background: rgba(255,255,255,.08); transform: translateY(-1px); }
+
+/* Timeline */
+body.about .timeline{ display:grid; gap:12px; counter-reset: step; }
+body.about .timeline li{
+  display:grid; grid-template-columns: 92px 1fr; gap:16px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px; padding:14px 16px;
+}
+body.about .timeline .when{ font-weight:800; color:#fff; }
+body.about .timeline .what{ color: rgba(255,255,255,.85); }
+
+/* Logos on dark */
+body.about .logo-tile{ background:#fff; } /* keep white tiles; pop on dark */
+
+/* CTA */
+body.about .section-cta .card{
+  background: linear-gradient(180deg, rgba(255,66,25,.18), rgba(255,255,255,.06));
+  border-color: rgba(255,66,25,.28);
+}
+body.about .section-cta .button,
+body.about .section-cta .btn{ background: var(--saffron); color:#111; font-weight:800; }
+
+/* Lightbox overlay */
+body.about .lb{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.7); backdrop-filter: blur(2px); z-index: 999; }
+body.about .lb.active{ display:flex; }
+body.about .lb > img{ max-width:min(92vw,1200px); max-height:88vh; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+
+/* Back-to-top FAB */
+body.about .fab{ position:fixed; right:16px; bottom:20px; opacity:0; transform: translateY(10px); pointer-events:none; transition:opacity .2s, transform .2s; z-index:60; }
+body.about .fab.show{ opacity:1; transform:none; pointer-events:auto; }
+body.about .fab .btn{ background: var(--saffron); color:#111; padding:.7rem .9rem; border-radius:999px; }
+
+/* Smooth reveal uses your .reveal/.visible; keep it */
+
+/************ ABOUT — Orange title + image frame ************/
+
+/* Orange pill used as a small title/eyebrow inside cards */
+body.about .title-pill{
+  display:inline-block;
+  background: var(--saffron);
+  color:#111;
+  font-weight:800;
+  padding:.55rem 1rem;
+  border-radius:999px;
+  letter-spacing:.2px;
+  box-shadow: 0 8px 22px rgba(255,66,25,.25);
+}
+
+/* Make the two hero cards look like framed boxes and keep image inside the box */
+body.about .card-hero{
+  position: relative;
+  display: grid;
+  align-content: end;                /* put text & button near bottom like your mock */
+  gap: 14px;
+  min-height: 220px;                 /* control card height */
+  border-radius: 22px;
+  padding: 18px;
+  overflow: hidden;                  /* image never escapes the box */
+  border: 2px solid rgba(255,255,255,.25);
+  background: #0a0f3a;               /* fallback color if image fails */
+}
+
+/* Turn your existing background-image cards into framed hero cards */
+body.about .card-label,
+body.about .card-cultural{
+  background-size: cover;
+  background-position: center;
+}
+body.about .card-label.card-hero::before,
+body.about .card-cultural.card-hero::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background: linear-gradient( to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55) );
+}
+
+/* Content sits above overlay */
+body.about .card-hero > *{ position:relative; z-index:1; }
+
+/* White CTA button on the image (like your screenshot) */
+body.about .btn-on-image{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:#fff; color:#111; font-weight:800;
+  padding:.85rem 1.2rem; border-radius:999px;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+}
+body.about .btn-on-image:hover{ transform: translateY(-2px); }
+
+/* Optional: make H2 in this area use orange too */
+body.about .use-orange h2,
+body.about h2.orange{ color: var(--saffron); }
+
+/* If you use <img> inside any card and want it to exactly fit a box: */
+body.about .image-box{
+  /* the “frame” around the image */
+  background:#0a0f3a;
+  border: 2px solid rgba(255,255,255,.25);
+  border-radius: 22px;
+  padding: 10px;                     /* creates the visible white/space frame */
+  box-shadow: var(--shadow);
+}
+body.about .image-box .image-inner{
+  aspect-ratio: 16/9;                /* change if you want a different ratio */
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+body.about .image-box img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover;                  /* ensures image fills the box */
+}
+/* ---- About: fix hero card vertical layout ---- */
+body.about .card-hero{
+  /* 3 rows: pill | text grows | button bottom */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;           /* keep pill tight to the top */
+  gap: 16px;
+  padding: 22px;                /* same top padding for both cards */
+  min-height: 340px;            /* ensure equal height boxes */
+}
+
+/* Ensure no accidental top margin pushes the pill down */
+body.about .card-hero > *:first-child{ margin-top: 0 !important; }
+
+/* Paragraph spacing tuned so it doesn’t add extra top gap */
+body.about .card-hero p{ margin: 2px 0 0; line-height: 1.65; }
+
+/* Keep the CTA glued to the bottom row */
+body.about .card-hero .btn-on-image{ justify-self: stretch; }
+
+/* Optional: if any h2/h3 appears inside, remove default margin */
+body.about .card-hero h2, 
+body.about .card-hero h3{ margin: 0; }
 
 
+/* ABOUT hero uses a photo background */
+body.about .hero--about{
+  position: relative;
+  min-height: calc(100svh - var(--header-h,70px));
+  text-align:center;
+  color: #fff;
+
+  /* IMPORTANT: path is relative to assets/css/styles.css */
+  background: url("../img/abt.jpg") center / cover no-repeat;
+  isolation: isolate; /* keep overlay stacking clean */
+}
+
+/* dark overlay so title/subtitle are readable */
+body.about .hero--about::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.35) 40%,
+    rgba(0,0,0,.75) 100%);
+  z-index: 0;
+}
+
+/* hero content above overlay */
+body.about .hero--about .container{ position:relative; z-index:1; }
+
+/* keep the sticky subnav legible on the photo */
+body.about .subnav{
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+/* ===== Fix: make framed images auto-fill the box on any screen ===== */
+
+/* Mission image frame */
+body.about .mission-image{
+  position: relative;
+  aspect-ratio: 16 / 9;          /* gives the box a real height */
+  border-radius: 18px;
+  overflow: hidden;               /* keep rounded corners */
+}
+
+/* On small screens you can use a taller ratio if you prefer */
+@media (max-width: 640px){
+  body.about .mission-image{ aspect-ratio: 4 / 3; }
+}
+
+/* Make the image fill the frame regardless of size */
+body.about .mission-image > img{
+  position: absolute;
+  inset: 0;                       /* top/right/bottom/left = 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* crops nicely */
+  display: block;                 /* removes inline-image gaps */
+}
+
+/* If you also use the generic image-box/image-inner pattern elsewhere,
+   this keeps those filling too. */
+body.about .image-box .image-inner{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+body.about .image-box .image-inner > img{
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+
+/************* ABOUT — Fancy Values *************/
+body.about .fancy-values{
+  display:grid;
+  gap:14px;
+  margin-top:14px;
+  list-style:none;
+  padding-left:0;
+}
+
+/* 2 columns on desktop */
+@media (min-width: 980px){
+  body.about .fancy-values{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body.about .fancy-values li{
+  position:relative;
+  padding:16px 16px 16px 64px;
+  color:#fff;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+/* glowing gradient dot */
+body.about .fancy-values li::before{
+  content:"";
+  position:absolute;
+  left:18px; top:50%; transform:translateY(-50%);
+  width:28px; height:28px; border-radius:50%;
+  background: radial-gradient(55% 55% at 50% 50%, var(--saffron) 0%, #ff7b55 40%, #3333ff 100%);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.07), 0 10px 18px rgba(255,66,25,.35);
+}
+
+/* subtle hover lift */
+body.about .fancy-values li:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.08);
+}
+
+/* optional small caption when an item gets toggled open by JS */
+body.about .fancy-values li.open{
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+}
+
+/************* ABOUT — Timeline with vertical rail *************/
+body.about .timeline.rail{
+  position:relative;
+  margin-top:16px;
+  display:grid;
+  gap:16px;
+  counter-reset: step;
+  padding-left: 0; /* remove default ol padding */
+  list-style:none;
+}
+
+/* the vertical rail */
+body.about .timeline.rail::before{
+  content:"";
+  position:absolute;
+  left:44px; top:0; bottom:0; width:3px;
+  background: linear-gradient(180deg, #ff4219, #3333ff);
+  border-radius:999px;
+  opacity:.9;
+}
+
+/* each milestone card */
+body.about .timeline.rail li{
+  position:relative;
+  display:grid;
+  grid-template-columns: 110px 1fr;
+  gap:18px;
+  align-items:center;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  padding:14px 16px 14px 16px;
+  margin-left: 16px; /* make room for the rail nodes */
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+}
+
+/* node on the rail */
+body.about .timeline.rail li::before{
+  content:"";
+  position:absolute;
+  left:44px; top:50%; transform:translate(-50%,-50%);
+  width:18px; height:18px; border-radius:50%;
+  background: var(--saffron);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.07), 0 6px 16px rgba(255,66,25,.45);
+  z-index:2;
+}
+
+/* year badge */
+body.about .timeline .when{
+  justify-self:start;
+  font-weight:800;
+  color:#fff;
+  background: rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.16);
+  padding:.45rem .8rem;
+  border-radius:999px;
+  letter-spacing:.3px;
+}
+
+/* description */
+body.about .timeline .what{
+  color: rgba(255,255,255,.92);
+}
+
+/* mobile: single column; keep rail & nodes aligned */
+@media (max-width: 720px){
+  body.about .timeline.rail li{
+    grid-template-columns: 1fr;
+    padding-left: 72px;
+  }
+  body.about .timeline .when{ margin-bottom: 6px; }
+}
+/* ===== ABOUT — Timeline (single aligned rail, no double line) ===== */
+body.about .timeline.rail{
+  --rail-x: 42px;                 /* one source of truth for the rail position */
+  position: relative;
+  margin-top: 16px;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+/* one vertical rail, behind the cards */
+body.about .timeline.rail::before{
+  content: "";
+  position: absolute;
+  left: var(--rail-x);
+  top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--saffron), var(--blue-royal));
+  border-radius: 999px;
+  z-index: 0;                     /* keep behind the cards */
+  pointer-events: none;
+}
+
+/* milestone card */
+body.about .timeline.rail li{
+  position: relative;
+  z-index: 1;                     /* above the rail so the rail doesn't show through */
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: center;
+
+  /* remove previous left margin from earlier CSS */
+  margin-left: 0 !important;
+  padding: 14px 16px 14px calc(var(--rail-x) + 24px);  /* space for the rail/node */
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-left: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+}
+
+/* the round node centered exactly on the rail */
+body.about .timeline.rail li::before{
+  content: "";
+  position: absolute;
+  left: var(--rail-x);
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--saffron);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.07), 0 6px 16px rgba(255,66,25,.45);
+  z-index: 2;                     /* above the card */
+}
+
+/* year badge + text */
+body.about .timeline .when{
+  justify-self: start;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  letter-spacing: .3px;
+}
+body.about .timeline .what{ color: rgba(255,255,255,.92); }
+
+/* mobile: single column, keep rail aligned */
+@media (max-width: 720px){
+  body.about .timeline.rail li{
+    grid-template-columns: 1fr;
+    padding-left: calc(var(--rail-x) + 30px);
+  }
+  body.about .timeline .when{ margin-bottom: 6px; }
+}
+/* Orange heading class (used site-wide) */
+.orange {
+  color: var(--saffron);
+}
+/* generic SVG icon sizing */
+.icon { width: 18px; height: 18px; display: inline-block; }
+.social-icon .icon { width: 20px; height: 20px; }
 
