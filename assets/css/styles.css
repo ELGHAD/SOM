@@ -1083,6 +1083,33 @@ body.home .after-hero {
     background-position: center top;
   }
 }
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background-color: #00ff84; /* couleur d’effet hover */
+}
+
+.social-icon i {
+  pointer-events: none;
+}
 
 
 
