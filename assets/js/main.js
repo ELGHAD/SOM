@@ -257,3 +257,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = mailto;
   });
 });
+
+// MUSIC PAGE: gently animate cards on scroll (reuses your .reveal/.visible)
+(() => {
+  if (!document.body.classList.contains('page-music')) return;
+  const obs = new IntersectionObserver((ents)=>ents.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  }), {threshold: .14});
+  document.querySelectorAll('.page-music .reveal').forEach(el=>obs.observe(el));
+})();
