@@ -209,3 +209,51 @@ if (document.body.classList.contains('about')) {
     });
   });
 }
+// ------------------------------------
+// Submit form UX (scoped & non-intrusive)
+// ------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".submit-form");
+  if (!form) return;
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const terms = form.querySelector('input[name="Terms"]');
+  const message = form.querySelector("#message");
+
+  // Disable submit until Terms is checked
+  if (submitBtn && terms) {
+    const sync = () => (submitBtn.disabled = !terms.checked);
+    sync();
+    terms.addEventListener("change", sync);
+  }
+
+  // Optional: live character counter
+  if (message) {
+    const counter = document.createElement("div");
+    counter.style.fontSize = "0.85rem";
+    counter.style.color = "rgba(255,255,255,.68)";
+    counter.style.marginTop = "4px";
+    message.insertAdjacentElement("afterend", counter);
+    const update = () => (counter.textContent = `${message.value.length} characters`);
+    update();
+    message.addEventListener("input", update);
+  }
+
+  // Mailto fallback composer
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const to = form.dataset.email || "demos@soundsofmorocco.com";
+    const subject = form.dataset.subject || "Music Submission";
+
+    const data = new FormData(form);
+    const lines = [];
+    for (const [k, v] of data.entries()) {
+      if (k.toLowerCase() === "terms") continue;
+      lines.push(`${k}: ${v}`);
+    }
+
+    const body = encodeURIComponent(lines.join("\n"));
+    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
+  });
+});

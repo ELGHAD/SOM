@@ -176,40 +176,23 @@ h3 {
 }
 
 /* Mobile menu */
-/* Mobile menu (one source of truth) */
 @media (max-width: 960px) {
   .menu {
     display: none;
-    position: fixed;             /* keeps it attached to the viewport */
-    top: var(--header-h, 70px);  /* sits below the sticky header */
-    left: 0;
-    right: 0;
-    z-index: 1001;
-    background: #000;            /* ← keep it black */
+    position: absolute;
+    inset: 60px 0 auto 0;
+    background: var(--sand);
     flex-direction: column;
     padding: 1rem 1.2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
-  .menu.open { display: flex; }
-
-  .menu a {
-    color: #fff;                 /* white links on black bg */
+  .menu.open {
+    display: flex;
   }
-  .menu a:hover,
-  .menu a[aria-current="page"] {
-    color: #ffcc00;              /* highlight (optional) */
-  }
-
-  .burger { display: flex; }
-  .burger span {
-    background: #fff;            /* burger lines visible on black */
-  }
-
-  .header {
-    background: #000 !important; /* ensure header stays black too */
+  .burger {
+    display: flex;
   }
 }
-
 
 /* Hero */
 .hero {
@@ -1617,4 +1600,737 @@ body.about .timeline .what{ color: rgba(255,255,255,.92); }
 /* generic SVG icon sizing */
 .icon { width: 18px; height: 18px; display: inline-block; }
 .social-icon .icon { width: 20px; height: 20px; }
+
+/* ==============================
+   SUBMIT — Section & Form Styles
+   ============================== */
+
+/* Space so the footer never overlaps */
+.submit-section {
+  padding-top: clamp(56px, 6vw, 88px);
+  padding-bottom: clamp(90px, 8vw, 140px);
+  position: relative;
+  overflow: visible;
+}
+
+/* Gradient INSIDE the form card (blue -> black) with glass look */
+.submit-card {
+  background: linear-gradient(180deg, #0b1d5a 0%, #0a0f2b 45%, #000000 100%);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.45);
+  color: #fff;
+  padding: clamp(20px, 2.5vw, 32px);
+  backdrop-filter: blur(8px) saturate(130%);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
+}
+
+/* Title pill -> orange accent */
+.submit-card .section-title .pill {
+  background: rgba(255,66,25,0.14);
+  color: #ff4219;
+  border: 1px solid rgba(255,66,25,0.35);
+  font-weight: 600;
+  padding: .4rem 1.1rem;
+  border-radius: 999px;
+}
+
+/* Form grid */
+.submit-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.submit-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 860px) { .submit-form .row { grid-template-columns: 1fr; } }
+
+.submit-form label {
+  display: block;
+  font-size: .95rem;
+  color: rgba(255,255,255,.82);
+  margin: 0 0 6px;
+}
+
+/* Inputs */
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  width: 100%;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: .95rem;
+  transition: border-color .2s, box-shadow .2s, background .2s, transform .06s;
+}
+.submit-form ::placeholder { color: rgba(255,255,255,.5); }
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover { background: rgba(255,255,255,0.08); }
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  outline: none;
+  border-color: #ff4219;
+  box-shadow: 0 0 0 4px rgba(255,66,25,0.18);
+}
+
+/* Select caret */
+.submit-form select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.75) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.75) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 52%, calc(100% - 12px) 52%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.submit-form textarea { min-height: 160px; resize: vertical; }
+
+/* Terms + CTA */
+.form-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; margin-top: .5rem;
+}
+.form-actions .terms { color: rgba(255,255,255,.78); font-size: .92rem; }
+.form-actions input[type="checkbox"] { accent-color: #ff4219; margin-right: 8px; }
+
+/* CTA Button */
+.btn.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(90deg, #ff6a3a, #ff4219);
+  border: 0; color: #fff; font-weight: 700;
+  border-radius: 999px; padding: 12px 22px; font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(255,66,25,.35);
+  transition: transform .08s ease, box-shadow .25s ease, filter .2s ease;
+}
+.btn.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(255,66,25,.45); }
+.btn.btn-primary:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Helper text */
+.submit-form .help {
+  color: rgba(255,255,255,.6);
+  font-size: .88rem;
+  margin-top: .6rem;
+}
+
+/* Ensure the card content never clips */
+.submit-card { overflow: visible; }
+/* ==============================
+   SUBMIT PAGE BACKGROUND PHOTO
+   ============================== */
+
+/* white genre */
+
+/* ==============================
+   FIX: Dark dropdown options
+   ============================== */
+
+/* Make the opened dropdown list dark on most browsers */
+.submit-form select option,
+.submit-form select optgroup {
+  background-color: #101a33 !important; /* deep navy */
+  color: #f1f5f9 !important;            /* light text */
+}
+
+/* Highlighted/hovered option color */
+.submit-form select option:checked,
+.submit-form select option:hover,
+.submit-form select option:focus {
+  background-color: #182449 !important; /* slightly lighter navy */
+  color: #ffffff !important;
+}
+
+/* Keep the closed select looking dark (you already had this) */
+.submit-form select {
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.06);
+}
+
+/* Hide the old arrow on IE/Edge (legacy) */
+.submit-form select::-ms-expand { display: none; }
+
+/* Accessibility: prevent forced-colors from overriding our choices */
+@media (forced-colors: active) {
+  .submit-form select option { forced-color-adjust: none; }
+}
+/* box check terms*/
+/* ==============================
+   FIX: Checkbox alignment & size
+   ============================== */
+.form-actions .terms {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between box and text */
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Bigger, modern checkbox */
+.form-actions .terms input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #ff4219; /* orange theme */
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* Add a subtle hover effect */
+.form-actions .terms input[type="checkbox"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(255, 66, 25, 0.25);
+}
+
+/* Ensure good spacing under the checkbox block */
+.form-actions {
+  gap: 1.5rem;
+}
+
+/* =========================================================
+   SUBMIT PAGE – force a new page background (outside the box)
+   ========================================================= */
+
+/* 0) Neutralize whatever the template set earlier */
+body.submit-page,
+body.submit-page .section,
+body.submit-page .section::before,
+body.submit-page .submit-section,
+body.submit-page .submit-section::before,
+body.submit-page .container,
+body.submit-page .container::before,
+body.submit-page .card,
+body.submit-page .card::before,
+body.submit-page .reveal,
+body.submit-page .reveal::before {
+  background: none !important;
+  background-image: none !important;
+}
+body.submit-page .section::before,
+body.submit-page .submit-section::before,
+body.submit-page .container::before,
+body.submit-page .card::before,
+body.submit-page .reveal::before {
+  content: none !important;
+}
+
+/* 1) Make sure the page can host a fixed background layer */
+body.submit-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 2) Our new image + gradient sits behind EVERYTHING */
+body.submit-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    /* gradient overlay for readability */
+    linear-gradient(180deg, rgba(11,29,90,0.90) 0%, rgba(10,15,43,0.95) 45%, rgba(0,0,0,0.98) 100%),
+    /* 👉 replace with your file */
+    url("../img/aa.jpg") center center / cover no-repeat;
+  background-attachment: fixed;
+}
+/* =========================================================
+   SUBMIT PAGE — pure background photo, no gradient overlay
+   ========================================================= */
+body.submit-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("../img/aa.jpg") center center / cover no-repeat;
+  background-attachment: fixed; /* optional: parallax-style effect */
+}
+/* =========================================================
+   SUBMIT FORM PANEL — deep blue background for readability
+   (append at the very end of styles.css)
+   ========================================================= */
+
+/* Make the card itself transparent and draw a blue panel under its content */
+.submit-card {
+  position: relative;
+  background: transparent !important;   /* ignore old gradient */
+  border: none;                          /* border will be drawn on the overlay */
+  overflow: visible;
+}
+
+/* Blue panel behind the form content */
+.submit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+background: linear-gradient(180deg, rgba(12,22,60,0.985), rgba(6,12,38,0.985));
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px) saturate(130%);
+  -webkit-backdrop-filter: blur(4px) saturate(130%);
+  z-index: 0;
+}
+
+/* Lift all inner content above the blue overlay */
+.submit-card > * { position: relative; z-index: 1; }
+
+/* Fields: darker fill so the new photo never bleeds through */
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  background: rgba(8, 14, 40, 0.55);                      /* dark navy fill */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover {
+  background: rgba(8, 14, 40, 0.65);
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  border-color: #ff4219;
+  box-shadow: 0 0 0 4px rgba(255, 66, 25, 0.18);
+  background: rgba(8, 14, 40, 0.75);
+}
+
+/* Placeholder/readability tweaks */
+.submit-form ::placeholder { color: rgba(255,255,255,0.55); }
+.submit-form label { color: rgba(255,255,255,0.9); }
+
+/* Dropdown options stay readable on dark */
+.submit-form select option,
+.submit-form select optgroup {
+  background-color: #101a33 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Keep the checkbox text bright */
+.form-actions .terms { color: rgba(255,255,255,0.92); }
+
+
+/* =========================================================
+   SUBMIT FORM — solid deep blue background, no red tint
+   ========================================================= */
+.submit-card {
+  position: relative;
+  background: #0b1d5a !important; /* solid deep blue */
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: clamp(20px, 2.5vw, 32px);
+  z-index: 1;
+}
+
+/* Remove any blur or gradient overlay that might bleed red */
+.submit-card::before,
+.submit-card::after {
+  content: none !important;
+}
+
+/* Dark input fields for contrast */
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  background: rgba(10, 20, 60, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover {
+  background: rgba(15, 30, 80, 1);
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  background: rgba(15, 30, 90, 1);
+  border-color: #ff4219;
+  box-shadow: 0 0 0 4px rgba(255, 66, 25, 0.2);
+}
+
+/* Ensure labels and placeholder text are readable */
+.submit-form label { color: rgba(255, 255, 255, 0.9); }
+.submit-form ::placeholder { color: rgba(255, 255, 255, 0.6); }
+
+/* Dropdown options stay dark */
+.submit-form select option {
+  background-color: #0a143c !important;
+  color: #ffffff !important;
+}
+
+/* Checkbox and text are clearly visible */
+.form-actions .terms { color: rgba(255, 255, 255, 0.92); }
+.form-actions .terms input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #ff4219;
+}
+/* =========================================================
+   FINAL — Solid Deep Blue Form Box (no red tint, no fade)
+   ========================================================= */
+
+.submit-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 60, 0.97) 0%,
+    rgba(5, 10, 30, 0.98) 60%,
+    rgba(0, 5, 15, 1) 100%
+  ) !important;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: clamp(24px, 3vw, 36px);
+  z-index: 1;
+}
+
+/* Remove all background overlays or old effects */
+.submit-card::before,
+.submit-card::after {
+  content: none !important;
+}
+
+/* Form fields: darker navy fill for consistency */
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  background: rgba(15, 25, 70, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover {
+  background: rgba(20, 35, 90, 0.95);
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  background: rgba(25, 45, 110, 1);
+  border-color: #ff4219;
+  box-shadow: 0 0 0 4px rgba(255, 66, 25, 0.2);
+  outline: none;
+}
+
+/* Labels & placeholder visibility */
+.submit-form label {
+  color: rgba(255, 255, 255, 0.92);
+}
+.submit-form ::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Dropdown options - dark theme */
+.submit-form select option,
+.submit-form select optgroup {
+  background-color: #0a143c !important;
+  color: #f1f5f9 !important;
+}
+
+/* Checkbox styling */
+.form-actions .terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.form-actions .terms input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #ff4219;
+  border-radius: 6px;
+}
+
+/* Button remains as your signature orange */
+.btn.btn-primary {
+  background: linear-gradient(90deg, #ff6a3a, #ff4219);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 12px 22px;
+  box-shadow: 0 12px 28px rgba(255, 66, 25, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.25s ease;
+}
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(255, 66, 25, 0.45);
+}
+
+/* =========================================================
+   FIX TITLES & LABEL VISIBILITY (for Submit Form)
+   ========================================================= */
+
+/* Section title pill */
+.submit-card .section-title .pill {
+  background: rgba(255, 66, 25, 0.15);
+  color: #ff4219;
+  border: 1px solid rgba(255, 66, 25, 0.4);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.45rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(255, 66, 25, 0.35);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Labels ("Full Name", "Email", etc.) */
+.submit-form label {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.7); /* improves contrast on light parts of image */
+}
+
+/* Field placeholders (text inside inputs) */
+.submit-form ::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Optional: emphasize section title ("Submit Your Music") at top */
+.submit-card .section-title {
+  text-align: left;
+}
+.submit-card .section-title span {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+/* =========================================================
+   SUBMIT FORM — polished, readable, responsive
+   ========================================================= */
+
+/* Section spacing (keeps page scroll natural and not too tall) */
+.submit-section {
+  padding: clamp(24px, 4vw, 48px) 16px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Centered form card with solid deep-blue panel (no red tint) */
+.submit-card {
+  position: relative;
+  max-width: 1120px;            /* prevents extra-wide forms */
+  margin: 0 auto;
+  padding: clamp(20px, 2.8vw, 32px);
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 60, 0.98) 0%,
+    rgba(6, 12, 38, 0.98) 60%,
+    rgba(3, 6, 22, 1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+.submit-card::before,
+.submit-card::after { content: none !important; }
+
+/* Title pill — bold, on-brand */
+.submit-card .section-title { margin-bottom: clamp(14px, 2vw, 22px); }
+.submit-card .section-title .pill {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff6a3a, #ff4219);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px rgba(255, 66, 25, 0.35);
+}
+
+/* Layout grid: 2 columns on desktop, 1 on tablets/phones */
+.submit-form { display: grid; gap: clamp(14px, 2vw, 20px); }
+.submit-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 1.6vw, 18px);
+}
+@media (max-width: 1024px) { .submit-form .row { grid-template-columns: 1fr; } }
+
+/* Labels: bright & crisp over any background */
+.submit-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+/* Inputs / selects / textareas: dark navy with soft inner glow */
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  width: 100%;
+  color: #fff;
+  background: radial-gradient(110% 140% at 0% 0%, rgba(22,35,88,0.95) 0%, rgba(15,25,70,0.95) 60%, rgba(10,18,50,0.95) 100%);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: border-color .2s, box-shadow .2s, background .2s, transform .05s;
+}
+.submit-form ::placeholder { color: rgba(255,255,255,0.65); }
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover {
+  background: radial-gradient(110% 140% at 0% 0%, rgba(26,42,110,0.98) 0%, rgba(18,32,90,0.98) 60%, rgba(12,22,65,0.98) 100%);
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  outline: none;
+  border-color: #ff4219;
+  box-shadow: 0 0 0 4px rgba(255,66,25,0.22);
+  background: radial-gradient(110% 140% at 0% 0%, rgba(28,46,120,1) 0%, rgba(20,36,100,1) 60%, rgba(14,26,76,1) 100%);
+}
+
+/* Textarea sizing without huge vertical bloat */
+.submit-form textarea { min-height: 170px; resize: vertical; }
+
+/* Custom select caret */
+.submit-form select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.75) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.75) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 52%, calc(100% - 12px) 52%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Dropdown list stays dark */
+.submit-form select option,
+.submit-form select optgroup {
+  background-color: #0a143c !important;
+  color: #f1f5f9 !important;
+}
+
+/* Terms + submit row */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 20px);
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+/* Better, larger checkbox */
+.form-actions .terms {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+  cursor: pointer;
+}
+.form-actions .terms input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #ff4219;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* CTA button stays on-brand */
+.btn.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(90deg, #ff6a3a, #ff4219);
+  color: #fff; font-weight: 800;
+  border: 0; border-radius: 999px;
+  padding: 12px 22px; font-size: 1rem;
+  box-shadow: 0 12px 28px rgba(255,66,25,.35);
+  transition: transform .1s ease, box-shadow .25s ease, filter .2s ease;
+}
+.btn.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(255,66,25,.45); }
+
+/* Helper text subtle */
+.submit-form .help { color: rgba(255,255,255,0.7); font-size: .9rem; }
+
+/* Tighter desktop height so you don't need to scroll just to see the CTA */
+@media (min-width: 1200px) {
+  .submit-card { padding: 28px 34px; }
+  .submit-form input,
+  .submit-form select { padding: 13px 16px; }
+}
+
+/* Small devices: single column, comfortable spacing */
+@media (max-width: 640px) {
+  .submit-card { padding: 18px; border-radius: 16px; }
+  .form-actions { flex-direction: column; align-items: stretch; }
+  .btn.btn-primary { width: 100%; justify-content: center; }
+}
+
+/* Force Genre <select> to match other input fields */
+.submit-form select {
+  width: 100%;
+  color: #fff;
+  background: rgba(18,30,80,0.95); /* same dark blue tone */
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.94rem;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.75) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.75) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 52%, calc(100% - 12px) 52%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.submit-form select:hover {
+  background: rgba(24,40,110,0.98);
+}
+
+.submit-form select:focus {
+  outline: none;
+  border-color: #ff4219;
+  box-shadow: 0 0 0 3px rgba(255,66,25,0.25);
+  background: rgba(26,42,120,1);
+}
+
+/* Dropdown options also dark-blue */
+.submit-form select option {
+  background-color: #0a143c;
+  color: #f1f5f9;
+}
 

@@ -10,7 +10,8 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   </head>
-  <body>
+  <body class="submit-page">
+
     <header class="header">
       <div class="container nav">
         <a class="brand" href="index.html"
@@ -30,84 +31,81 @@
       </div>
     </header>
 
-    <section class="section">
-      <div class="container card reveal">
-        <div class="section-title">
-          <span class="pill">Submit Your Music</span>
+<section class="section submit-section">
+  <div class="container card submit-card reveal">
+    <div class="section-title">
+      <span class="pill">Submit Your Music</span>
+    </div>
+
+    <form class="submit-form" data-email="demos@soundsofmorocco.com" data-subject="Music Submission" novalidate>
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="field">
+          <label for="fullname">Full Name</label>
+          <input id="fullname" name="Full Name" type="text" autocomplete="name" required placeholder="Your full name" />
         </div>
-        <form
-          data-email="demos@soundsofmorocco.com"
-          data-subject="Music Submission"
-        >
-          <div class="row">
-            <div>
-              <label for="fullname">Full Name</label>
-              <input id="fullname" name="Full Name" required />
-            </div>
-            <div>
-              <label for="artist">Artist Name</label>
-              <input id="artist" name="Artist Name" required />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="Email" type="email" required />
-            </div>
-            <div>
-              <label for="country">Country</label>
-              <input id="country" name="Country" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div>
-              <label for="genre">Genre</label>
-              <select id="genre" name="Genre">
-                <option>Electronic</option>
-                <option>Gnawa</option>
-                <option>Chaâbi</option>
-                <option>Fusion</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label for="link"
-                >Track Link (Drive / WeTransfer / YouTube / SoundCloud)</label
-              >
-              <input
-                id="link"
-                name="Track Link"
-                type="url"
-                required
-                placeholder="https://…"
-              />
-            </div>
-          </div>
-
-          <label for="message">Message (optional)</label>
-          <textarea
-            id="message"
-            name="Message"
-            rows="4"
-            placeholder="Tell us about the project…"
-          ></textarea>
-
-          <label
-            ><input type="checkbox" required name="Terms" /> I agree to the
-            terms of the demo policy.</label
-          >
-          <button class="btn btn-primary" type="submit">
-            Submit Your Music
-          </button>
-          <p class="help">
-            This form opens your email client with your info (fallback). Replace
-            with EmailJS or a server endpoint to automate.
-          </p>
-        </form>
+        <div class="field">
+          <label for="artist">Artist Name</label>
+          <input id="artist" name="Artist Name" type="text" required placeholder="Stage/Artist name" />
+        </div>
       </div>
-    </section>
+
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" autocomplete="email" required placeholder="you@mail.com" />
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input id="country" name="Country" type="text" placeholder="Where are you based?" />
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row">
+        <div class="field">
+          <label for="genre">Genre</label>
+          <select id="genre" name="Genre">
+            <option>Electronic</option>
+            <option>Gnawa</option>
+            <option>Chaâbi</option>
+            <option>Fusion</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="link">Track Link (Drive / WeTransfer / YouTube / SoundCloud)</label>
+          <input id="link" name="Track Link" type="url" required placeholder="https://…" inputmode="url" />
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="field">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="Message" rows="5" placeholder="Tell us about the project… influences, release plans, references, etc."></textarea>
+      </div>
+
+      <!-- Terms + Actions -->
+      <div class="form-actions">
+        <label class="terms">
+          <input type="checkbox" required name="Terms" />
+          <span>I agree to the terms of the demo policy.</span>
+        </label>
+
+        <button class="btn btn-primary" type="submit" aria-label="Submit your music">
+          <i class="fa-solid fa-paper-plane"></i>
+          Submit Your Music
+        </button>
+      </div>
+
+      <p class="help">
+        Please fill this form.
+      </p>
+    </form>
+  </div>
+</section>
+
 
     <footer class="footer">
       <div class="container footer-content">
