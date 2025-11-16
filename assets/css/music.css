@@ -1,0 +1,327 @@
+/* Music Page Styles (inherits About styling via body.about class) */
+
+/* Hide site-wide background on music page */
+body.music::before {
+  display: none !important;
+}
+
+/* Hero section styling */
+.music .hero--about {
+  background: url("../img/abt.jpg") center / cover no-repeat;
+}
+
+/* Hero overlay fade */
+.music .hero--about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Seam guard - smooth transition from hero to gradient */
+.music .hero--about::after {
+  content: "";
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #000;
+  pointer-events: none;
+}
+
+/* After-hero gradient background */
+.music.after-hero {
+  background: linear-gradient(180deg, #000 0%, #1a1a8c 45%, #000 100%);
+  position: relative;
+}
+
+/* Track tile styling */
+.music .track-tile {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.music .track-tile:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 165, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+.music .track-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.music .track-meta {
+  padding: 1rem;
+}
+
+.music .track-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.music .track-artist {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Video card styling */
+.music .video-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.music .video-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 165, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.music .video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+  overflow: hidden;
+}
+
+.music .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.music .video-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Playlist card styling */
+.music .playlist-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.music .playlist-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.music .playlist-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+}
+
+/* CTA section */
+.music .section-cta {
+  margin-top: 3rem;
+}
+
+.music .section-cta .card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.music .section-cta h2 {
+  margin-bottom: 1rem;
+}
+
+.music .section-cta p {
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+/* Grid layout adjustments */
+.music .grid {
+  gap: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .music .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .music .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .music .track-cover {
+    height: 150px;
+  }
+}
+
+/* Section header */
+.section-header {
+  margin-bottom: 1.8rem;
+}
+
+.section-header .section-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.98rem;
+  opacity: 0.8;
+}
+
+/* Layout */
+.tracks-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Track card */
+.track-tile {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  padding: 1.8rem 2rem;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at top left,
+    #202040 0%,
+    #070717 60%,
+    #040412 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Cover */
+.track-media {
+  flex: 0 0 220px;
+}
+
+.track-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* always a square */
+  border-radius: 12px;
+  object-fit: cover; /* nice crop like Spotify */
+  display: block;
+}
+
+/* Info */
+.track-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.5rem;
+}
+
+.track-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.track-artist {
+  font-size: 0.98rem;
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.track-meta-line {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0.6rem;
+}
+
+.track-meta-line span {
+  font-weight: 600;
+}
+
+.track-description {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  max-width: 520px;
+}
+
+/* Actions */
+.track-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* Small button variant using your existing .btn */
+.btn-sm {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .track-tile {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem 1.3rem;
+  }
+
+  .track-media {
+    flex: 0 0 auto;
+    width: 180px;
+  }
+
+  .track-title {
+    font-size: 1.3rem;
+  }
+}

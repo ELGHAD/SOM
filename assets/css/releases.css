@@ -1,0 +1,110 @@
+/* Releases Page Styles (inherits About styling via body.about class) */
+
+/* Hide site-wide background on releases */
+body.releases::before {
+  display: none !important;
+}
+
+/* Hero section styling */
+.releases .hero--about {
+  background: url("../img/abt.jpg") center / cover no-repeat;
+}
+
+/* Hero overlay fade */
+.releases .hero--about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Seam guard - smooth transition from hero to gradient */
+.releases .hero--about::after {
+  content: "";
+  position: absolute;
+  bottom: -48px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #000;
+  pointer-events: none;
+}
+
+/* After-hero gradient background */
+.releases.after-hero {
+  background: linear-gradient(180deg, #000 0%, #1a1a8c 45%, #000 100%);
+  position: relative;
+}
+
+/* Release card styling */
+.releases .release {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.releases .release:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 165, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Filter chips */
+.releases .chip {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.releases .chip:hover {
+  background: rgba(255, 165, 0, 0.2);
+  border-color: rgba(255, 165, 0, 0.5);
+}
+
+.releases .chip.active {
+  background: #ffa500;
+  color: #000;
+  border-color: #ffa500;
+}
+
+/* Audio player styling */
+.releases audio {
+  width: 100%;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+/* CTA section */
+.releases .section-cta {
+  margin-top: 3rem;
+}
+
+.releases .section-cta .card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.releases .section-cta h2 {
+  margin-bottom: 1rem;
+}
+
+.releases .section-cta p {
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}

@@ -266,3 +266,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }), {threshold: .14});
   document.querySelectorAll('.page-music .reveal').forEach(el=>obs.observe(el));
 })();
+
+

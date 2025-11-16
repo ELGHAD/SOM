@@ -4,25 +4,40 @@
     <meta charset="utf-8" />
     <title>Merch — Sounds of Morocco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="Merch — Sounds of Morocco. Coming soon - exclusive merchandise and limited edition items."
+    />
+    <!-- Favicon (SVG + PNG fallback) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-        <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <link rel="stylesheet" href="assets/css/merch.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
+
+  <body class="about merch">
+    <!-- Header -->
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html"
-          ><img src="assets/img/logo.png" alt="Sounds of Morocco" /><span
-            >Sounds of Morocco</span
-          ></a
-        >
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="Sounds of Morocco" />
+          <span>Sounds of Morocco</span>
+        </a>
         <nav class="menu" id="menu">
-          <a href="about.html">About</a><a href="releases.html">Releases</a
-          ><a href="partners.html">Partners</a><a href="music.html">Music</a
-          ><a href="news.html">News</a><a href="merch.html">Merch</a
-          ><a class="cta-submit" href="submit.html">Submit</a>
+          <a href="about.html">About</a>
+          <a href="releases.html">Releases</a>
+          <a href="partners.html">Partners</a>
+          <a href="music.html">Music</a>
+          <a href="news.html">News</a>
+          <a href="merch.html" aria-current="page">Merch</a>
+          <a class="cta-submit" href="submit.html">Submit</a>
         </nav>
         <button class="burger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -30,40 +45,117 @@
       </div>
     </header>
 
-    <section class="section">
-      <div class="container reveal">
-        <div class="section-title"><span class="pill">Shop</span></div>
-        <div class="grid grid-3">
-          <div class="merch-card card">
-            <img src="assets/img/hero.jpg" alt="" />
-            <h3>T-Shirt Logo (Blue)</h3>
-            <div class="price">€25</div>
-            <p class="help">100% cotton, screen printed.</p>
-            <button class="buy">Add to cart</button>
-          </div>
-          <div class="merch-card card">
-            <img src="assets/img/hero.jpg" alt="" />
-            <h3>Sound Pack — Atlas Drums</h3>
-            <div class="price">€15</div>
-            <p class="help">Royalty-free Moroccan percussion pack.</p>
-            <button class="buy alt">Buy now</button>
-          </div>
-          <div class="merch-card card">
-            <img src="assets/img/hero.jpg" alt="" />
-            <h3>Sticker Set</h3>
-            <div class="price">€5</div>
-            <p class="help">High quality vinyl stickers.</p>
-            <button class="buy">Add to cart</button>
-          </div>
-        </div>
-        <p class="help">
-          For payments, integrate Stripe or PayPal on top of these cards
-          (front-end only here).
+    <!-- Hero -->
+    <section class="hero hero--about">
+      <div class="container">
+        <h1 class="display">Merch</h1>
+        <p class="lead">
+          Exclusive merchandise and limited edition items celebrating Moroccan
+          culture and the Sounds of Morocco community.
         </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <nav class="subnav">
+          <a href="#coming-soon">Coming Soon</a>
+          <a href="#notify">Get Notified</a>
+        </nav>
       </div>
     </section>
 
-     <footer class="footer">
+    <!-- Coming Soon Section -->
+    <main class="after-hero">
+      <!-- Coming Soon Section -->
+      <section id="coming-soon" class="section reveal">
+        <div class="container">
+          <div class="coming-soon-container">
+            <div class="coming-soon-card">
+              <div class="icon-circle">
+                <i class="fa-solid fa-box"></i>
+              </div>
+              <h2 class="orange">Coming Soon!</h2>
+              <p>
+                We're working on something special. Exclusive merchandise,
+                limited edition apparel, and unique items celebrating Moroccan
+                culture and the Sounds of Morocco community are on the way.
+              </p>
+              <p style="font-size: 0.95rem; opacity: 0.8">
+                From branded t-shirts and hoodies to vinyl records, art prints,
+                and collectibles 
+                <strong>stay tuned for our official launch.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What to Expect -->
+      <section class="section reveal">
+        <div class="container">
+          <h2 class="orange">What to Expect</h2>
+
+          <div class="grid grid-3">
+            <div class="card feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-shirt"></i>
+              </div>
+              <h3>Apparel</h3>
+              <p>
+                High-quality t-shirts, hoodies, and hats featuring original
+                designs inspired by Moroccan art and culture.
+              </p>
+            </div>
+
+            <div class="card feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-compact-disc"></i>
+              </div>
+              <h3>Limited Vinyl</h3>
+              <p>
+                Collectible vinyl records and special edition releases exclusive
+                to our merch store.
+              </p>
+            </div>
+
+            <div class="card feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <h3>Art & Prints</h3>
+              <p>
+                Original artwork, posters, and prints collaborating with local
+                Moroccan artists and designers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notify Section -->
+      <section id="notify" class="section section-cta reveal">
+        <div class="container">
+          <div class="card notify-card">
+            <h2 class="orange">Be First to Know</h2>
+            <p>
+              Join our community to get notified when our merch store launches.
+              We'll send you exclusive early access and special launch offers.
+            </p>
+            <div style="margin-top: 1.4rem">
+              <button
+                class="btn btn-primary"
+                onclick="alert('Notification signup coming soon!')"
+              >
+                <i class="fa-solid fa-bell"></i> Notify Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
       <div class="container footer-content">
         <div class="footer-col">
           <h4>Explore</h4>
@@ -96,13 +188,15 @@
             >contact@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-            For partnerships, collaborations, press, or general inquiries. Our team will get back to you shortly.
+            For partnerships, collaborations, press, or general inquiries. Our
+            team will get back to you shortly.
           </p>
           <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
             >demos@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-             Share your tracks and join the movement. We’re always open to discovering new Moroccan sounds.
+            Share your tracks and join the movement. We're always open to
+            discovering new Moroccan sounds.
           </p>
         </div>
 
@@ -114,35 +208,40 @@
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-            ><i class="fab fa-instagram"></i></a>
+              ><i class="fab fa-instagram"></i
+            ></a>
 
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i></a>
+              ><i class="fab fa-tiktok"></i
+            ></a>
 
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-            ><i class="fab fa-spotify"></i></a>
+              ><i class="fab fa-spotify"></i
+            ></a>
 
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-            ><i class="fab fa-soundcloud"></i></a>
+              ><i class="fab fa-soundcloud"></i
+            ></a>
 
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-            ><i class="fab fa-youtube"></i></a>
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -157,6 +256,7 @@
         </div>
       </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

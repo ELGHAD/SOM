@@ -4,19 +4,29 @@
     <meta charset="utf-8" />
     <title>Music & Videos — Sounds of Morocco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="Music & Videos — Sounds of Morocco. Explore our latest tracks, music videos, and curated playlists."
+    />
+    <!-- Favicon (SVG + PNG fallback) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/music.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
 
-  <body class="page-music">
-    <!-- ================= HEADER (unchanged) ================= -->
+  <body class="about music">
+    <!-- Header -->
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html">
+        <a href="index.html" class="brand">
           <img src="assets/img/logo.png" alt="Sounds of Morocco" />
           <span>Sounds of Morocco</span>
         </a>
@@ -35,163 +45,227 @@
       </div>
     </header>
 
-    <!-- ================= MAIN ================= -->
-    <!-- Music Videos -->
-    <section class="section reveal">
+    <!-- Hero -->
+    <section class="hero hero--about">
       <div class="container">
-        <div class="section-title">
-          <span class="pill">Music Videos</span>
-        </div>
-
-        <div class="grid grid-3">
-          <!-- Video 1 -->
-          <article class="video-card">
-            <div class="video-frame">
-              <iframe
-                class="video"
-                src="https://www.youtube-nocookie.com/embed/6BW0b6H_Mt4"
-                title="Official Clip — Sounds of Morocco"
-                loading="lazy"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <h3 class="video-title">Official Clip</h3>
-          </article>
-
-          <!-- Video 2 -->
-          <article class="video-card">
-            <div class="video-frame">
-              <iframe
-                class="video"
-                src="https://www.youtube-nocookie.com/embed/oHg5SJYRHA0"
-                title="Live Session — Sounds of Morocco"
-                loading="lazy"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <h3 class="video-title">Live Session</h3>
-          </article>
-
-          <!-- Video 3 -->
-          <article class="video-card">
-            <div class="video-frame">
-              <iframe
-                class="video"
-                src="https://www.youtube-nocookie.com/embed/ysz5S6PUM-U"
-                title="Behind the Scenes — Sounds of Morocco"
-                loading="lazy"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <h3 class="video-title">Behind the Scenes</h3>
-          </article>
-        </div>
+        <h1 class="display">Music & Videos</h1>
+        <p class="lead">
+          Discover our latest tracks, music videos, and curated playlists from
+          emerging Moroccan artists.
+        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <nav class="subnav">
+          <a href="#tracks">Latest Tracks</a>
+          <a href="#videos">Music Videos</a>
+          <a href="#playlists">Playlists</a>
+          <a href="#cta">Submit</a>
+        </nav>
       </div>
     </section>
 
-    <!-- Playlists (Spotify / YouTube) -->
-<!-- Playlists (Spotify / YouTube) -->
-<section class="section reveal">
-  <div class="container">
-    <div class="section-title">
-      <span class="pill">Curated Albums</span>
-    </div>
-
-    <div class="playlist-row">
-      <!-- SPOTIFY ALBUM -->
-      <article class="playlist-card">
-        <h3 style="margin:0 0 8px;">Spotify — “Moroccan Culture”</h3>
-        <iframe
-          style="border-radius:12px; width:100%; height:352px; border:0;"
-          src="https://open.spotify.com/embed/album/1r3aIYPydcxhXoPyfSjq0z?utm_source=generator"
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        ></iframe>
-      </article>
-
-      <!-- YOUTUBE ALBUM -->
-<!-- YOUTUBE ALBUM -->
-        <article class="playlist-card">
-          <h3 style="margin:0 0 8px;">YouTube — “Moroccan Culture”</h3>
-          <div class="video-frame" style="position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden;">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_m616Aria49JYOYgtiWcAmATfmxYNa5NtQ"
-              title="YouTube Album — Moroccan Culture"
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-            ></iframe>
+    <main class="after-hero">
+      <!-- Latest Tracks -->
+      <section id="tracks" class="section reveal">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="orange">Latest Tracks</h2>
+            <p class="section-subtitle">
+              Fresh sounds from the Sounds of Morocco universe. Stream our
+              latest release.
+            </p>
           </div>
-        </article>
 
-    </div>
-  </div>
-</section>
+          <div class="tracks-grid">
+            <article class="track-tile">
+              <!-- Cover -->
+              <div class="track-media">
+                <img
+                  class="track-cover"
+                  src="assets/img/tamagitcover.jfif"
+                  alt="Tamagit – Yas.Weeyzz ft. S."
+                />
+              </div>
 
+              <!-- Info -->
+              <div class="track-info">
+                <span class="track-badge">Single</span>
+                <h3 class="track-title">TAMAGIT</h3>
+                <p class="track-artist">Yas.Weeyzz - Salah Fafah - Simvne</p>
 
-    <!-- Latest Tracks (Artwork grid) -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="section-title">
-          <span class="pill">Latest Tracks</span>
+                <p class="track-meta-line">
+                  Released on <span>Elblend</span> • Moroccan contemporary /
+                  fusion
+                </p>
+
+                <p class="track-description">
+                  A journey through modern Moroccan textures, mixing traditional
+                  influences with electronic sound design and emotional vocals.
+                </p>
+
+                <div class="track-actions">
+                  <a
+                    href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=A_qxBK2xQvK6nq2MkfQ8Hw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm"
+                  >
+                    <i class="fab fa-spotify"></i>
+                    Listen on Spotify
+                  </a>
+
+                  <a
+                    href="https://open.spotify.com/track/0Q2oeQVL6BpHeie0b8jV5l?si=659f3d52ac8144f4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-sm"
+                  >
+                    <i class="fa-solid fa-music"></i>
+                    Artist Profile
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="tracks-grid">
-          <!-- Track tile (duplicate/edit as needed) -->
-          <a
-  class="track-tile"
-  href="https://open.spotify.com/album/32u1dmYxqqCxQvEu4mYGEJ?si=HqGRBNzvQzCpj6Zi160pHQ"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <img
-    class="track-cover"
-    src="assets/img/tamagitcover.jfif"
-    alt="Tamagit – Yas.Weeyzz ft. S."
-  />
-  <div class="track-meta">
-    <div class="track-title">Tamagit</div>
-    <div class="track-artist">Yas.Weeyzz ft. S.</div>
-  </div>
-</a>
+      <!-- Music Videos -->
+      <section id="videos" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Music Videos</h2>
 
+          <div class="grid grid-3">
+            <!-- Video 1 -->
+            <article class="video-card">
+              <div class="video-frame">
+                <iframe
+                  class="video"
+                  src="https://www.youtube-nocookie.com/embed/6BW0b6H_Mt4"
+                  title="Official Clip — Sounds of Morocco"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3 class="video-title">Official Clip</h3>
+            </article>
 
-         
+            <!-- Video 2 -->
+            <article class="video-card">
+              <div class="video-frame">
+                <iframe
+                  class="video"
+                  src="https://www.youtube-nocookie.com/embed/oHg5SJYzezeRHA0"
+                  title="Live Session — Sounds of Morocco"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3 class="video-title">Live Session</h3>
+            </article>
+
+            <!-- Video 3 -->
+            <article class="video-card">
+              <div class="video-frame">
+                <iframe
+                  class="video"
+                  src="https://www.youtube-nocookie.com/embed/yszeazez5S6PUM-U"
+                  title="Behind the Scenes — Sounds of Morocco"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3 class="video-title">Behind the Scenes</h3>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- Curated Playlists -->
+      <section id="playlists" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Curated Playlists</h2>
 
-    <!-- CTA Banner -->
-<section class="section reveal cta-section">
-  <div class="container">
-    <div class="cta-banner">
-      <h2>Join the Movement</h2>
-      <p>
-        Be part of a new wave of Moroccan sound. Submit your track or collaborate with our collective.
-      </p>
-      <div class="cta-actions">
-        <a class="btn-orange" href="submit.html">
-          <i class="fa-solid fa-paper-plane"></i> Submit Your Music
-        </a>
-        <br><br>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="grid grid-2">
+            <!-- Spotify Playlist -->
+            <article class="playlist-card">
+              <h3>Spotify — "Moroccan Culture"</h3>
+              <iframe
+                style="
+                  border-radius: 12px;
+                  width: 100%;
+                  height: 352px;
+                  border: 0;
+                "
+                src="https://open.spotify.com/embed/album/1r3aIYPydcxhXoPyfSjq0z?utm_source=generator"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+            </article>
 
-<br>
-<br>
-<br>
-    <!-- ================= FOOTER (unchanged) ================= -->
+            <!-- YouTube Playlist -->
+            <article class="playlist-card">
+              <h3>YouTube — "Moroccan Culture"</h3>
+              <div
+                class="video-frame"
+                style="
+                  position: relative;
+                  width: 100%;
+                  padding-top: 56.25%;
+                  border-radius: 12px;
+                  overflow: hidden;
+                "
+              >
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_m616Aria49JYOYgtiWcAmATfmxYNa5NtQ"
+                  title="YouTube Album — Moroccan Culture"
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                  "
+                ></iframe>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="section section-cta reveal">
+        <div class="container">
+          <div class="card">
+            <h2 class="orange">Share Your Sound</h2>
+            <p>
+              Have a track you'd like to share? Submit your music to our
+              platform and become part of the Sounds of Morocco community.
+            </p>
+            <div style="margin-top: 1.4rem">
+              <a href="submit.html" class="btn btn-primary"
+                ><i class="fa-solid fa-paper-plane"></i> Submit Your Music</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container footer-content">
         <div class="footer-col">
@@ -225,13 +299,15 @@
             >contact@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-            For partnerships, collaborations, press, or general inquiries. Our team will get back to you shortly.
+            For partnerships, collaborations, press, or general inquiries. Our
+            team will get back to you shortly.
           </p>
           <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
             >demos@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-             Share your tracks and join the movement. We’re always open to discovering new Moroccan sounds.
+            Share your tracks and join the movement. We're always open to
+            discovering new Moroccan sounds.
           </p>
         </div>
 
@@ -243,35 +319,40 @@
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-            ><i class="fab fa-instagram"></i></a>
+              ><i class="fab fa-instagram"></i
+            ></a>
 
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i></a>
+              ><i class="fab fa-tiktok"></i
+            ></a>
 
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-            ><i class="fab fa-spotify"></i></a>
+              ><i class="fab fa-spotify"></i
+            ></a>
 
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-            ><i class="fab fa-soundcloud"></i></a>
+              ><i class="fab fa-soundcloud"></i
+            ></a>
 
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-            ><i class="fab fa-youtube"></i></a>
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>

@@ -4,25 +4,39 @@
     <meta charset="utf-8" />
     <title>Partners — Sounds of Morocco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="Partners & collaborations — Sounds of Morocco. Cultural partners, store partners and collaboration opportunities."
+    />
+    <!-- Favicon (SVG + PNG fallback) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-        <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
+
+  <body class="about partners">
+    <!-- Header -->
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html"
-          ><img src="assets/img/logo.png" alt="Sounds of Morocco" /><span
-            >Sounds of Morocco</span
-          ></a
-        >
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="Sounds of Morocco" />
+          <span>Sounds of Morocco</span>
+        </a>
         <nav class="menu" id="menu">
-          <a href="about.html">About</a><a href="releases.html">Releases</a
-          ><a href="partners.html">Partners</a><a href="music.html">Music</a
-          ><a href="news.html">News</a><a href="merch.html">Merch</a
-          ><a class="cta-submit" href="submit.html">Submit</a>
+          <a href="about.html">About</a>
+          <a href="releases.html">Releases</a>
+          <a href="partners.html" aria-current="page">Partners</a>
+          <a href="music.html">Music</a>
+          <a href="news.html">News</a>
+          <a href="merch.html">Merch</a>
+          <a class="cta-submit" href="submit.html">Submit</a>
         </nav>
         <button class="burger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -30,60 +44,201 @@
       </div>
     </header>
 
-    <section class="section">
-      <div class="container reveal">
-        <h2>Cultural Partners</h2>
-        <p class="help">Short descriptions of each collaboration.</p>
-        <div class="logos">
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/visa-for-music.svg" alt="" />
-            <div class="help" style="text-align: center">
-              Visa For Music — showcases & panels
-            </div></a
-          >
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/festival.svg" alt="" />
-            <div class="help" style="text-align: center">
-              Festivals — stages & residencies
-            </div></a
-          >
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/studio.svg" alt="" />
-            <div class="help" style="text-align: center">
-              Studios — recording partnerships
-            </div></a
-          >
-        </div>
+    <!-- HERO (About-style with abt.jpg background) -->
+    <section class="hero hero--about">
+      <div class="container">
+        <h1 class="display">Partners & Collaborations</h1>
+        <p class="lead">
+          We team up with cultural institutions, festivals, studios and
+          streaming platforms to share Moroccan sounds worldwide.
+        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <nav class="subnav">
+          <a href="#about">About</a>
+          <a href="#partners">Label Partners</a>
+          <a href="#stores">Store Partners</a>
+          <a href="#join">Partner With Us</a>
+        </nav>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal">
-        <h2>Store Partners</h2>
-        <div class="logos">
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/spotify.svg" alt="Spotify"
-          /></a>
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/deezer.svg" alt="Deezer"
-          /></a>
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/applemusic.svg" alt="Apple Music"
-          /></a>
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/amazon.svg" alt="Amazon Music"
-          /></a>
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/shazam.svg" alt="Shazam"
-          /></a>
-          <a class="logo-tile" href="#"
-            ><img src="assets/img/partners/tiktok.svg" alt="TikTok"
-          /></a>
+    <main class="after-hero">
+      <!-- About Our Collaborations -->
+      <section id="about" class="section reveal">
+        <div class="container">
+          <div class="card">
+            <h2 class="orange">About Our Collaborations</h2>
+            <p>
+              Our collaborations range from curatorial residencies to label
+              distribution and promotional campaigns. We work with cultural
+              institutions, festivals, and studios to create opportunities for
+              Moroccan artists to perform, record, and reach new audiences.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-     <footer class="footer">
+      <!-- Label / Cultural Partners -->
+      <section id="partners" class="section">
+        <div class="container reveal">
+          <div class="section-title">
+            <span class="pill">Label Partners</span>
+          </div>
+          <div class="logos">
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/hitradio.png" alt="Visa For Music"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/kassita.jfif" alt="Festival"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/uzine.jfif" alt="L'Uzine"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/blend.jfif" alt="L'blend"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/ope.jfif" alt="Institution"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/glory.png" alt="glory"
+            /></a>
+            <a class="logo-tile" href="#"
+              ><img src="assets/img/360.jfif" alt="Institution"
+            /></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Store / Platform partners -->
+      <section id="stores" class="section">
+        <div class="container reveal">
+          <div class="section-title">
+            <span class="pill">Label Store Partners</span>
+          </div>
+          <div class="logos logos-store">
+            <a class="logo-tile-store" href="#" aria-label="Spotify">
+              <img src="assets/img/spotify.png" alt="Spotify" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Deezer">
+              <img src="assets/img/Deezer.png" alt="Deezer" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Apple Music">
+              <img src="assets/img/applemusic.png" alt="Apple Music" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Amazon">
+              <img src="assets/img/amazon.jfif" alt="Amazon" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Shazam">
+              <img src="assets/img/shazam.png" alt="Shazam" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="TikTok">
+              <img src="assets/img/tiktok.svg" alt="TikTok Music" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="YouTube">
+              <img src="assets/img/youtube.png" alt="YouTube Music" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Beatport">
+              <img src="assets/img/beatport.jpeg" alt="Beatport" />
+            </a>
+            <a class="logo-tile-store" href="#" aria-label="Tidal">
+              <img src="assets/img/tidal.svg" alt="Tidal Music" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="SoundCloud">
+              <img src="assets/img/soundcloud.png" alt="SoundCloud" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Anghami">
+              <img src="assets/img/anghami.png" alt="Anghami (MENA)" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Pandora">
+              <img src="assets/img/pandora.png" alt="Pandora" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Napster">
+              <img src="assets/img/napster.png" alt="Napster" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Boomplay">
+              <img src="assets/img/boomplay.png" alt="Boomplay (Africa)" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Audiomack">
+              <img src="assets/img/audiomack.png" alt="Audiomack" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Yandex Music">
+              <img src="assets/img/yandex.png" alt="Yandex Music" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="JioSaavn">
+              <img src="assets/img/saavn.png" alt="JioSaavn (India)" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="QQ Music">
+              <img src="assets/img/qqmusic.png" alt="QQ Music (China)" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="NetEase Music">
+              <img
+                src="assets/img/netease.png"
+                alt="NetEase Cloud Music (China)"
+              />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Facebook Music">
+              <img
+                src="assets/img/facebookmusic.png"
+                alt="Facebook / Instagram Music"
+              />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Triller">
+              <img src="assets/img/triller.png" alt="Triller" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="Kuack Media">
+              <img src="assets/img/kuack.png" alt="Kuack Media" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="7digital">
+              <img src="assets/img/7digital.png" alt="7digital" />
+            </a>
+
+            <a class="logo-tile-store" href="#" aria-label="iHeartRadio">
+              <img src="assets/img/iheart.png" alt="iHeartRadio" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA / Partner With Us -->
+      <section id="join" class="section section-cta reveal">
+        <div class="container">
+          <div class="card">
+            <h2 class="orange">Partner With Us</h2>
+            <p>
+              Interested in collaborating? Tell us about your project and we'll
+              explore ways to work together.
+            </p>
+            <div style="margin-top: 1.4rem">
+              <a href="contact.html" class="btn btn-primary"
+                ><i class="fa-solid fa-paper-plane"></i> Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
       <div class="container footer-content">
         <div class="footer-col">
           <h4>Explore</h4>
@@ -112,18 +267,16 @@
 
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
+          <a href="mailto:contact@soundsofmorocco.com" class="footer-email"
             >contact@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-            For partnerships, collaborations, press, or general inquiries. Our team will get back to you shortly.
+            For partnerships, collaborations, press, or general inquiries. Our
+            team will get back to you shortly.
           </p>
-          <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
+          <a href="mailto:demos@soundsofmorocco.com" class="footer-email"
             >demos@soundsofmorocco.com</a
           >
-          <p class="footer-contact-text">
-             Share your tracks and join the movement. We’re always open to discovering new Moroccan sounds.
-          </p>
         </div>
 
         <div class="footer-col">
@@ -134,35 +287,36 @@
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-            ><i class="fab fa-instagram"></i></a>
-
+              ><i class="fab fa-instagram"></i
+            ></a>
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i></a>
-
+              ><i class="fab fa-tiktok"></i
+            ></a>
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-            ><i class="fab fa-spotify"></i></a>
-
+              ><i class="fab fa-spotify"></i
+            ></a>
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-            ><i class="fab fa-soundcloud"></i></a>
-
+              ><i class="fab fa-soundcloud"></i
+            ></a>
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-            ><i class="fab fa-youtube"></i></a>
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -177,6 +331,7 @@
         </div>
       </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

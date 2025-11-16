@@ -1,0 +1,415 @@
+/* ======================= Partners page (scoped) ======================= */
+/* Only affects pages with <body class="partners"> */
+body.partners {
+  /* Palette (match About page tone) */
+  --ink: #0a0a0a;
+  --blue-900: #0b1330;
+  --blue-800: #141f66;
+  --blue-700: #1f2ee8;
+  --blue-600: #3c4cff;
+  --blue-500: #5f6bff;
+  --accent: #ff4219;
+  --accent-2: #ff6a3d;
+  --white: #ffffff;
+  --header-h: 96px;
+
+  color: #f6f7fd;
+  background: #000;
+}
+
+.partners .som-partners {
+  position: relative;
+  overflow: visible;
+}
+
+/* ============================ HERO =================================== */
+/* Hide the site-wide fixed background layer on the partners page so the
+   local hero image (About's photo) is used instead — matching About's look. */
+body.partners::before {
+  display: none !important;
+}
+
+.partners .partners-hero {
+  position: relative;
+  height: calc(100dvh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
+  padding-top: var(--header-h);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  /* Use the same hero photo as About for visual consistency */
+  background: url("../img/abt3.jpg") center / cover no-repeat;
+  isolation: isolate;
+  z-index: 0;
+}
+
+/* Readability + guaranteed solid base at the bottom of the hero */
+.partners .partners-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 0;
+}
+
+/* Seam guard: a solid black tail that overlaps the next wrapper */
+.partners .partners-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 48px;
+  background: #000; /* solid, no transparency */
+  pointer-events: none;
+}
+/* Hero content */
+.partners .partners-inner {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+  text-align: center;
+  color: var(--white);
+}
+.partners .partners-inner h1 {
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  line-height: 1.08;
+  margin: 0 0 0.7rem;
+  letter-spacing: 0.2px;
+}
+.partners .partners-inner p {
+  margin: 0 auto 1.25rem;
+  max-width: 75ch;
+  opacity: 0.94;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+}
+
+/* Mini header (tabs) */
+.partners .partners-minitabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.5rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.partners .partners-minitabs .pill {
+  --pad: 0.55rem 1rem;
+  color: #eaeaf4;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: var(--pad);
+  border-radius: 999px;
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+.partners .partners-minitabs .pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.partners .partners-minitabs .pill.is-active {
+  color: #111;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Sticky on scroll */
+@supports (position: sticky) {
+  .partners .partners-minitabs {
+    position: sticky;
+    top: 10px;
+    z-index: 3;
+  }
+}
+
+/* ================== PAGE BACKGROUND AFTER HERO ======================= */
+/* ZERO transparency at the top edge (important to remove the line).
+   Cinematic brighter blue sweep down the page, then back to black. */
+.partners .partners-bg {
+  position: relative;
+  z-index: 1;
+  margin-top: -1px; /* overlap hero tail by 1px */
+  padding-top: 1px; /* prevent margin-collapsing on first section */
+  padding-bottom: 64px;
+  color: #e8ecff;
+
+  /* Use the same post-hero gradient as the About page for consistency */
+  background: linear-gradient(180deg, #000 0%, #1a1a8c 45%, #000 100%);
+}
+
+/* ============================= SECTIONS ============================== */
+/* Full-width sections as requested earlier */
+.partners .partners-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 80px 8%;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+}
+
+/* First section: fade at TOP only (no bottom fade) */
+.partners .partners-section:first-of-type {
+  background: #0a0a2e; /* deep navy block for the first section content */
+}
+.partners .partners-section:first-of-type::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 160px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 20, 70, 0.95) 30%,
+    rgba(63, 76, 255, 0.45) 70%,
+    rgba(63, 76, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.partners .section-head {
+  text-align: center;
+  margin-bottom: clamp(16px, 3vw, 26px);
+  position: relative;
+  z-index: 1;
+}
+.partners .partners-title {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.3px;
+}
+.partners .partners-subtitle {
+  margin: 0 auto;
+  max-width: 70ch;
+  opacity: 0.9;
+  color: #f0f3ff;
+}
+
+/* ===================== GRID OF PARTNER CARDS ======================== */
+.partners .partners-grid {
+  --min: 220px;
+  display: grid;
+  gap: clamp(14px, 2vw, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+  align-items: stretch;
+  margin-top: clamp(16px, 2.5vw, 22px);
+}
+.partners .partner-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 1.2rem; /* align with .card spacing */
+  /* dark, glass-like cards matching About .card look */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius, 18px);
+  text-decoration: none;
+  color: #eef1ff;
+  box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.12));
+  transition: transform 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+.partners .partner-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.partners .partner-logo {
+  width: clamp(68px, 9vw, 96px);
+  height: clamp(68px, 9vw, 96px);
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+.partners .partner-logo img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  filter: brightness(1.1) saturate(1.1);
+}
+.partners .partner-name {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.partners .partner-note {
+  opacity: 0.78;
+}
+
+/* ============================== CTA ================================= */
+.partners .partners-cta {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 80px 8%;
+}
+.partners .partners-cta__box {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 31, 100, 0.78),
+    rgba(63, 76, 255, 0.55)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  padding: clamp(22px, 5vw, 38px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+.partners .partners-cta__box h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: #fff;
+}
+.partners .partners-cta__box p {
+  margin: 0;
+  max-width: 65ch;
+  opacity: 0.92;
+}
+.partners .partners-btn {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 20px rgba(255, 75, 34, 0.25);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+.partners .partners-btn:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.05);
+}
+
+/* =========================== Mobile tweaks ========================= */
+@media (max-width: 700px) {
+  body.partners {
+    --header-h: 80px;
+  }
+  .partners .partners-inner p {
+    padding-inline: 6px;
+  }
+  .partners .partners-minitabs {
+    gap: 0.35rem;
+  }
+}
+
+/* ============================== CTA (warm "card" like screenshot) ============================== */
+.partners .partners-cta {
+  width: min(1200px, 92%);
+  margin: clamp(44px, 8vw, 84px) auto;
+  padding: 0; /* the card handles its own padding */
+}
+
+.partners .partners-cta__box {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  justify-items: start; /* left align */
+  text-align: left;
+  padding: clamp(26px, 5vw, 56px);
+  border-radius: 22px;
+
+  /* warm top tint fading to near black (like your second image) */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 70, 40, 0.16) 0%,
+    rgba(40, 14, 18, 0.18) 22%,
+    rgba(10, 10, 10, 0.86) 68%,
+    rgba(10, 10, 10, 0.95) 100%
+  );
+
+  /* subtle border + glow + depth */
+  border: 1px solid rgba(255, 90, 50, 0.28);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45),
+    0 2px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+/* thin inner outline for that crisp edged look */
+.partners .partners-cta__box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(255, 90, 50, 0.18) inset;
+}
+
+/* Typography like screenshot: large orange heading, readable body */
+.partners .partners-cta__box h3 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #ff4219; /* warm orange */
+  font-size: clamp(2rem, 6vw, 3.4rem); /* big title */
+}
+.partners .partners-cta__box p {
+  margin: 0;
+  max-width: 70ch;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Button: pill, orange gradient, soft drop shadow */
+.partners .partners-btn {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  color: #111;
+  background: linear-gradient(90deg, #ff4219, #ff6a3d);
+  box-shadow: 0 14px 36px rgba(255, 75, 34, 0.35),
+    0 0.5px 0 rgba(255, 255, 255, 0.08) inset;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+}
+.partners .partners-btn:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.05);
+  box-shadow: 0 18px 44px rgba(255, 75, 34, 0.45),
+    0 0.5px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Optional: if you want a tiny bottom fade under the card (like depth) */
+.partners .partners-cta::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  transform: translateY(6px);
+  height: 20px;
+  border-radius: 999px;
+  background: radial-gradient(
+    60% 100% at 50% 0%,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}

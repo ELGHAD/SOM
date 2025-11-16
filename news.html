@@ -4,25 +4,40 @@
     <meta charset="utf-8" />
     <title>News — Sounds of Morocco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.svg" />
+    <meta
+      name="description"
+      content="News & Articles — Sounds of Morocco. Stay updated with our latest news, releases, and cultural updates."
+    />
+    <!-- Favicon (SVG + PNG fallback) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-        <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <link rel="stylesheet" href="assets/css/news.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
+
+  <body class="about news">
+    <!-- Header -->
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html"
-          ><img src="assets/img/logo.png" alt="Sounds of Morocco" /><span
-            >Sounds of Morocco</span
-          ></a
-        >
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="Sounds of Morocco" />
+          <span>Sounds of Morocco</span>
+        </a>
         <nav class="menu" id="menu">
-          <a href="about.html">About</a><a href="releases.html">Releases</a
-          ><a href="partners.html">Partners</a><a href="music.html">Music</a
-          ><a href="news.html">News</a><a href="merch.html">Merch</a
-          ><a class="cta-submit" href="submit.html">Submit</a>
+          <a href="about.html">About</a>
+          <a href="releases.html">Releases</a>
+          <a href="partners.html">Partners</a>
+          <a href="music.html">Music</a>
+          <a href="news.html" aria-current="page">News</a>
+          <a href="merch.html">Merch</a>
+          <a class="cta-submit" href="submit.html">Submit</a>
         </nav>
         <button class="burger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -30,38 +45,239 @@
       </div>
     </header>
 
-    <section class="section">
-      <div class="container grid grid-3 reveal">
-        <article class="news-card card">
-          <span class="tag">New Signing</span>
-          <h3>Welcome Amal Mzerd to the roster</h3>
-          <p>
-            We’re thrilled to announce a new signing. Expect a hybrid of chaâbi
-            aesthetics & modern production.
-          </p>
-          <span class="help">Feb 2025</span>
-        </article>
-        <article class="news-card card">
-          <span class="tag">Release</span>
-          <h3>‘Desert Echoes’ is out now</h3>
-          <p>
-            Listen on Spotify, Apple Music and more. Part of our “Atlas
-            Chapters”.
-          </p>
-          <span class="help">Jan 2025</span>
-        </article>
-        <article class="news-card card">
-          <span class="tag">Residency</span>
-          <h3>Chefchaouen workshop recap</h3>
-          <p>
-            Backstage photos & sounds from an unforgettable week of
-            collaboration.
-          </p>
-          <span class="help">Dec 2024</span>
-        </article>
+    <!-- Hero -->
+    <section class="hero hero--about">
+      <div class="container">
+        <h1 class="display">News & Articles</h1>
+        <p class="lead">
+          Stay updated with our latest news, artist announcements, cultural
+          stories, and industry insights from Sounds of Morocco.
+        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <nav class="subnav">
+          <a href="#latest">Latest</a>
+          <a href="#signings">Signings</a>
+          <a href="#releases">Releases</a>
+          <a href="#residencies">Residencies</a>
+        </nav>
       </div>
     </section>
 
+    <main class="after-hero">
+      <!-- Latest News -->
+      <section id="latest" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Latest News</h2>
+
+          <div class="grid grid-3">
+            <!-- News Card 1 -->
+            <article class="news-card card">
+              <span class="tag tag-signing">Collaboration</span>
+              <h3>Partnership with Lblend for "Souss Massa"</h3>
+              <p>
+                We partnered with Lblend to launch the first chapter of Sounds
+                of Morocco, showcasing the region through the track
+                <strong>TAMAGIT</strong>.
+              </p>
+              <span class="date">Feb 2025</span>
+            </article>
+
+            <!-- News Card 2 -->
+            <article class="news-card card">
+              <span class="tag tag-release">Visual Style</span>
+              <h3>Glory RM & Anouri join our creative team</h3>
+              <p>
+                The two artists bring their unique vision to enrich our visual
+                identity, adding a modern Moroccan touch to our graphics and
+                storytelling.
+              </p>
+              <span class="date">Jan 2025</span>
+            </article>
+
+            <!-- News Card 3 -->
+            <article class="news-card card">
+              <span class="tag tag-residency">Artists</span>
+              <h3>Salah Fafah & Simane join our journey</h3>
+              <p>
+                Two talented voices representing their region join Sounds of
+                Morocco to share their stories, culture, and musical heritage.
+              </p>
+              <span class="date">Dec 2024</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Article -->
+      <section id="signings" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Team Highlight</h2>
+
+          <div class="grid grid-2">
+            <!-- Text Card -->
+            <div class="card card-featured">
+              <h3 class="orange">Welcome Hamza Elrhadiouini to the Team</h3>
+              <p>
+                We are proud to welcome <strong>Hamza Elrhadiouini</strong> as
+                the newest member of the Sounds of Morocco collective. As a
+                full-stack developer and digital architect, he joins the team to
+                elevate the project’s digital identity through modern platforms
+                and creative technology.
+              </p>
+
+              <p>
+                From building immersive web experiences to designing flexible
+                infrastructures for our upcoming releases, Hamza will shape the
+                technical backbone behind our artistic and cultural initiatives.
+              </p>
+
+              <p>
+                His passion for innovation, Moroccan culture, and clean digital
+                craftsmanship makes him a key contributor to the next era of our
+                label.
+              </p>
+            </div>
+
+            <!-- Image -->
+            <div class="image-box">
+              <div class="image-inner">
+                <img src="assets/img/abt1.jpg" alt="Team Member — Developer" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Releases Section -->
+      <section id="releases" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Recent Releases</h2>
+
+          <div class="grid grid-3">
+            <!-- Release 1 -->
+            <article class="news-card card">
+              <h3>Tiznit Residency — Creation of “Tamagit”</h3>
+              <p>
+                Our first residency took place in Tiznit in collaboration with
+                Lblend, where the creative foundations for the track
+                <strong>Tamagit</strong>
+                were developed as part of the first chapter of Sounds of
+                Morocco.
+              </p>
+              <span class="date">Jan 2025</span>
+            </article>
+
+            <!-- Release 2 -->
+            <article class="news-card card">
+              <h3>Casablanca Residency — L'Uzine</h3>
+              <p>
+                A second residency hosted at L'Uzine, Casablanca, dedicated to
+                the production of our upcoming track. The official title remains
+                exclusive until the release announcement.
+              </p>
+              <span class="date">Dec 2024</span>
+            </article>
+
+            <!-- Release 3 -->
+            <article class="news-card card">
+              <h3>Live Performances & Residency Finale</h3>
+              <p>
+                Three major live sessions mark this chapter: a performance at
+                <strong>Cinéma Renaissance</strong> in Rabat, an open-air
+                session in <strong>Tiznit</strong>, and a final showcase at
+                <strong>GTA IAV</strong>.
+              </p>
+              <span class="date">Nov 2024</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Residencies Section -->
+      <section id="residencies" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Cultural Residencies</h2>
+
+          <div class="grid grid-3">
+            <!-- Residency 1 -->
+            <article class="news-card card">
+              <span class="tag tag-residency">Residency</span>
+              <h3>Tiznit Residency — Lblend</h3>
+              <p>
+                The first residency of Sounds of Morocco took place in Tiznit in
+                collaboration with Lblend, where the creative foundation for the
+                track
+                <strong>Tamagité</strong> was developed as part of the “Souss
+                Massa” chapter.
+              </p>
+              <span class="date">2024</span>
+            </article>
+
+            <!-- Residency 2 -->
+            <article class="news-card card">
+              <span class="tag tag-residency">Residency</span>
+              <h3>Casablanca Residency — L'Uzine</h3>
+              <p>
+                A second residency hosted at L'Uzine in Casablanca, dedicated to
+                the production of the next Sounds of Morocco track. The title
+                remains unrevealed until its official announcement.
+              </p>
+              <span class="date">2024</span>
+            </article>
+
+            <!-- Residency Finale -->
+          </div>
+        </div>
+      </section>
+
+      <!-- MORE RESIDENCIES COMING -->
+      <section id="more-residencies" class="section reveal">
+        <div class="container">
+          <div class="card" style="text-align: center; padding: 2.5rem 2rem">
+            <h2 class="orange">More Residencies Across Morocco</h2>
+            <br />
+            <p style="max-width: 700px; margin: 0 auto; opacity: 0.85">
+              Sounds of Morocco is expanding its cultural footprint with over
+              <strong>10 residencies across Morocco</strong>, including upcoming
+              projects in <strong>Errachidia</strong>, <strong>Fès</strong>,
+              <strong>Chefchaouen</strong>, and many more regions rich in
+              heritage and musical identity.
+            </p>
+
+            <p style="margin-top: 1rem; opacity: 0.75">
+              Stay tuned for new chapters, collaborations, and cultural
+              journeys.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="section section-cta reveal">
+        <div class="container">
+          <div class="card">
+            <h2 class="orange">Stay Updated</h2>
+            <p>
+              Subscribe to our newsletter to get the latest news, artist
+              announcements, and exclusive updates from Sounds of Morocco.
+            </p>
+            <div style="margin-top: 1.4rem">
+              <a href="#" class="btn btn-primary"
+                ><i class="fa-solid fa-bell"></i> Subscribe Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+      </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container footer-content">
         <div class="footer-col">
@@ -95,13 +311,15 @@
             >contact@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-            For partnerships, collaborations, press, or general inquiries. Our team will get back to you shortly.
+            For partnerships, collaborations, press, or general inquiries. Our
+            team will get back to you shortly.
           </p>
           <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
             >demos@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-             Share your tracks and join the movement. We’re always open to discovering new Moroccan sounds.
+            Share your tracks and join the movement. We're always open to
+            discovering new Moroccan sounds.
           </p>
         </div>
 
@@ -113,35 +331,40 @@
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-            ><i class="fab fa-instagram"></i></a>
+              ><i class="fab fa-instagram"></i
+            ></a>
 
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i></a>
+              ><i class="fab fa-tiktok"></i
+            ></a>
 
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-            ><i class="fab fa-spotify"></i></a>
+              ><i class="fab fa-spotify"></i
+            ></a>
 
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-            ><i class="fab fa-soundcloud"></i></a>
+              ><i class="fab fa-soundcloud"></i
+            ></a>
 
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-            ><i class="fab fa-youtube"></i></a>
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -156,6 +379,7 @@
         </div>
       </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

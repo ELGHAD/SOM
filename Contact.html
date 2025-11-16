@@ -2,31 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Submit Your Music — Sounds of Morocco</title>
+    <title>Partner With Us — Sounds of Morocco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon (SVG + PNG fallback) -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg" />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      href="assets/img/favicone.png"
+    />
+
 <link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
 
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   </head>
-  <body class="submit-page">
+  <body class="submit-page partner-page">
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html"
-          ><img src="assets/img/logo.png" alt="Sounds of Morocco" /><span
-            >Sounds of Morocco</span
-          ></a
-        >
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.png" alt="Sounds of Morocco" />
+          <span>Sounds of Morocco</span>
+        </a>
         <nav class="menu" id="menu">
-          <a href="about.html">About</a><a href="releases.html">Releases</a
-          ><a href="partners.html">Partners</a><a href="music.html">Music</a
-          ><a href="news.html">News</a><a href="merch.html">Merch</a
-          ><a class="cta-submit" href="submit.html">Submit</a>
+          <a href="about.html">About</a>
+          <a href="releases.html">Releases</a>
+          <a href="partners.html">Partners</a>
+          <a href="music.html">Music</a>
+          <a href="news.html">News</a>
+          <a href="merch.html">Merch</a>
+          <a class="cta-submit" href="submit.html">Submit</a>
         </nav>
         <button class="burger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -34,16 +39,16 @@
       </div>
     </header>
 
-    <section class="section submit-section">
-      <div class="container card submit-card reveal">
+    <section class="section submit-section partner-section">
+      <div class="container card submit-card partner-card reveal">
         <div class="section-title">
-          <span class="pill">Submit Your Music</span>
+          <span class="pill">Partner With Us</span>
         </div>
 
         <form
-          class="submit-form"
-          data-email="demos@soundsofmorocco.com"
-          data-subject="Music Submission"
+          class="submit-form partner-form"
+          data-email="contact@soundsofmorocco.com"
+          data-subject="Partnership Request — Sounds of Morocco"
           novalidate
         >
           <!-- Row 1 -->
@@ -60,13 +65,13 @@
               />
             </div>
             <div class="field">
-              <label for="artist">Artist Name</label>
+              <label for="organization">Organization / Brand</label>
               <input
-                id="artist"
-                name="Artist Name"
+                id="organization"
+                name="Organization"
                 type="text"
                 required
-                placeholder="Stage/Artist name"
+                placeholder="Label, brand, festival, venue, agency..."
               />
             </div>
           </div>
@@ -85,12 +90,12 @@
               />
             </div>
             <div class="field">
-              <label for="country">Country</label>
+              <label for="country">City / Country</label>
               <input
                 id="country"
-                name="Country"
+                name="Location"
                 type="text"
-                placeholder="Where are you based?"
+                placeholder="Casablanca, Rabat, Paris..."
               />
             </div>
           </div>
@@ -98,25 +103,21 @@
           <!-- Row 3 -->
           <div class="row">
             <div class="field">
-              <label for="genre">Genre</label>
+              <label for="partnership-type">Type of Partnership</label>
               <input
-                id="genre"
-                name="genre"
-                rows="5"
-                placeholder="Tell us about the genre of ur drop"
-                inputmode=""
+                id="partnership-type"
+                name="Partnership Type"
+                type="text"
+                placeholder="Events, distribution, brand collaboration, residency, media..."
               />
             </div>
             <div class="field">
-              <label for="link"
-                >Track Link (Drive / WeTransfer / YouTube / SoundCloud)</label
-              >
+              <label for="link">Website / Social Link</label>
               <input
                 id="link"
-                name="Track Link"
+                name="Website or Social"
                 type="url"
-                required
-                placeholder="https://…"
+                placeholder="https://yourwebsite.com or social profile"
                 inputmode="url"
               />
             </div>
@@ -124,12 +125,12 @@
 
           <!-- Message -->
           <div class="field">
-            <label for="message">Message (optional)</label>
+            <label for="message">Tell us about your idea</label>
             <textarea
               id="message"
               name="Message"
               rows="5"
-              placeholder="Tell us about the project… influences, release plans, references, etc."
+              placeholder="Describe the partnership idea, timeline, goals, audience, and how you see Sounds of Morocco involved."
             ></textarea>
           </div>
 
@@ -137,20 +138,26 @@
           <div class="form-actions">
             <label class="terms">
               <input type="checkbox" required name="Terms" />
-              <span>I agree to the terms of the demo policy.</span>
+              <span>
+                I agree to be contacted by Sounds of Morocco regarding this
+                partnership request.
+              </span>
             </label>
 
             <button
               class="btn btn-primary"
               type="submit"
-              aria-label="Submit your music"
+              aria-label="Send partnership request"
             >
-              <i class="fa-solid fa-paper-plane"></i>
-              Submit Your Music
+              <i class="fa-solid fa-handshake-simple"></i>
+              Partner With Us
             </button>
           </div>
 
-          <p class="help">Please fill this form.</p>
+          <p class="help">
+            Share as many details as possible. Our team will review your
+            proposal and get back to you.
+          </p>
         </form>
       </div>
     </section>
@@ -184,16 +191,16 @@
 
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
-            >contact@soundsofmorocco.com</a
-          >
+          <a href="mailto:hello@soundsofmorocco.com" class="footer-email">
+            contact@soundsofmorocco.com
+          </a>
           <p class="footer-contact-text">
             For partnerships, collaborations, press, or general inquiries. Our
             team will get back to you shortly.
           </p>
-          <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
-            >demos@soundsofmorocco.com</a
-          >
+          <a href="mailto:demos@soundsofmorocco.com" class="footer-email">
+            demos@soundsofmorocco.com
+          </a>
           <p class="footer-contact-text">
             Share your tracks and join the movement. We’re always open to
             discovering new Moroccan sounds.
@@ -208,40 +215,45 @@
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
 
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-              ><i class="fab fa-tiktok"></i
-            ></a>
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
 
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-              ><i class="fab fa-spotify"></i
-            ></a>
+            >
+              <i class="fab fa-spotify"></i>
+            </a>
 
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-              ><i class="fab fa-soundcloud"></i
-            ></a>
+            >
+              <i class="fab fa-soundcloud"></i>
+            </a>
 
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-              ><i class="fab fa-youtube"></i
-            ></a>
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -256,6 +268,7 @@
         </div>
       </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

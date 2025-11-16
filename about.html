@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Sounds of Morocco — Label & Distribution</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,12 +8,36 @@
       name="description"
       content="Sounds of Morocco — label, distribution & cultural project led by Yas.Weeyzz. Submit your music, discover releases, partners and news."
     />
-    <link rel="icon" href="favicon.svg" />
+    <!-- Favicon (SVG + PNG fallback) -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+
+
+  
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sounds of Morocco" />
+    <meta
+      property="og:description"
+      content="Unveiling Talent, Celebrating Culture"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/hero.jpg" />
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Sounds of Morocco",
+        "url": "https://example.com",
+        "founder": "Yas.Weeyzz"
+      }
+    </script>
   </head>
 
   <body class="about">
@@ -25,7 +49,6 @@
           <span>Sounds of Morocco</span>
         </a>
         <nav class="menu" id="menu">
-        
           <a href="about.html" aria-current="page">About</a>
           <a href="releases.html">Releases</a>
           <a href="partners.html">Partners</a>
@@ -41,28 +64,27 @@
     </header>
 
     <!-- Hero -->
-<section class="hero hero--about">
-  <div class="container">
-    <h1 class="display">About Sounds of Morocco</h1>
-    <p class="lead">
-      Independent label, cultural project, and artistic platform dedicated
-      to Moroccan and global sounds.
-    </p>
-    <br>
-<br>
-<br>
-<br>
-    <nav class="subnav">
-      <a href="#about">About</a>
-      <a href="#mission">Mission</a>
-      <a href="#vision">Vision</a>
-      <a href="#values">Values</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#cta">Join Us</a>
-    </nav>
-  </div>
-</section>
-
+    <section class="hero hero--about">
+      <div class="container">
+        <h1 class="display">About</h1>
+        <p class="lead">
+          Independent label, cultural project, and artistic platform dedicated
+          to Moroccan and global sounds.
+        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <nav class="subnav">
+          <a href="#about">About</a>
+          <a href="#mission">Mission</a>
+          <a href="#vision">Vision</a>
+          <a href="#values">Values</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#cta">Join Us</a>
+        </nav>
+      </div>
+    </section>
 
     <main class="after-hero">
       <!-- Label & Cultural Project cards -->
@@ -70,21 +92,38 @@
         <div class="container grid grid-2">
           <div class="card card-label card-hero">
             <span class="title-pill">Label &amp; Distribution</span>
-            <p>Sounds of Morocco is a 100% independent label and distribution platform, supporting Moroccan and international artists. We help producers and DJs release their music worldwide with a professional approach, offering music distribution, artist management, and event organization.
-Our team works closely with each artist to ensure their music reaches the right audience, while developing creative projects that blend traditional Moroccan sounds with modern electronic music. Join us to elevate your music, expand your reach, and take part in a professional, global journey.
-Discover our services and let us help you share your talent with the world.
+            <p>
+              Sounds of Morocco is a 100% independent label and distribution
+              platform, supporting Moroccan and international artists. We help
+              producers and DJs release their music worldwide with a
+              professional approach, offering music distribution, artist
+              management, and event organization. Our team works closely with
+              each artist to ensure their music reaches the right audience,
+              while developing creative projects that blend traditional Moroccan
+              sounds with modern electronic music. Join us to elevate your
+              music, expand your reach, and take part in a professional, global
+              journey. Discover our services and let us help you share your
+              talent with the world.
             </p>
-
           </div>
 
           <div class="card card-cultural card-hero">
             <span class="title-pill">Musical Cultural Project</span>
             <p>
-              The Sounds of Morocco Cultural Project is a musical journey across 12 regions of Morocco, exploring the country’s rich heritage and vibrant sounds. Led by producer Yas.Weeyzz, the project fuses traditional Moroccan music with modern electronic production, creating unique artistic collaborations that celebrate culture, creativity, and innovation.
-With the support of local partners such as Blend37 and L’Uzine, and ongoing collaborations with other cultural initiatives, the project continues to grow to help Moroccan music reach a global audience and support local talent.
-Through residencies, workshops, and performances, the project aims to connect artists, audiences, and communities, offering an immersive experience that bridges Morocco’s musical roots with the global electronic scene.
+              The Sounds of Morocco Cultural Project is a musical journey across
+              12 regions of Morocco, exploring the country’s rich heritage and
+              vibrant sounds. Led by producer Yas.Weeyzz, the project fuses
+              traditional Moroccan music with modern electronic production,
+              creating unique artistic collaborations that celebrate culture,
+              creativity, and innovation. With the support of local partners
+              such as Blend37 and L’Uzine, and ongoing collaborations with other
+              cultural initiatives, the project continues to grow to help
+              Moroccan music reach a global audience and support local talent.
+              Through residencies, workshops, and performances, the project aims
+              to connect artists, audiences, and communities, offering an
+              immersive experience that bridges Morocco’s musical roots with the
+              global electronic scene.
             </p>
-          
           </div>
         </div>
       </section>
@@ -137,46 +176,48 @@ Through residencies, workshops, and performances, the project aims to connect ar
         </div>
       </section>
 
- 
+      <!-- Values -->
+      <section id="values" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Our Values</h2>
 
-<!-- Values -->
-<section id="values" class="section reveal">
-  <div class="container">
-    <h2 class="orange">Our Values</h2>
+          <!-- just added the class fancy-values -->
+          <ul class="values-list fancy-values">
+            <li>We celebrate creators and empower collaboration.</li>
+            <li>We act with integrity and purpose.</li>
+            <li>We innovate and stay curious.</li>
+            <li>We respect every voice and cultural identity.</li>
+            <li>We grow together through education and community.</li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- just added the class fancy-values -->
-    <ul class="values-list fancy-values">
-      <li>We celebrate creators and empower collaboration.</li>
-      <li>We act with integrity and purpose.</li>
-      <li>We innovate and stay curious.</li>
-      <li>We respect every voice and cultural identity.</li>
-      <li>We grow together through education and community.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Timeline -->
-<section id="timeline" class="section reveal">
-  <div class="container">
-    <h2 class="orange">Milestones</h2> <!-- add this class -->
-    <ol class="timeline rail">
-      <li>
-        <span class="when">2023</span>
-        <span class="what">Founded by Yas.Weeyzz in Casablanca</span>
-      </li>
-      <li>
-        <span class="when">2024</span>
-        <span class="what">Launched first cultural residencies and partnerships</span>
-      </li>
-      <li>
-        <span class="when">2025</span>
-        <span class="what">Expanded internationally and created artist exchange programs</span>
-      </li>
-    </ol>
-  </div>
-</section>
-
-
+      <!-- Timeline -->
+      <section id="timeline" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Milestones</h2>
+          <!-- add this class -->
+          <ol class="timeline rail">
+            <li>
+              <span class="when">2023</span>
+              <span class="what">Founded by Yas.Weeyzz in Casablanca</span>
+            </li>
+            <li>
+              <span class="when">2024</span>
+              <span class="what"
+                >Launched first cultural residencies and partnerships</span
+              >
+            </li>
+            <li>
+              <span class="when">2025</span>
+              <span class="what"
+                >Expanded internationally and created artist exchange
+                programs</span
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
 
       <!-- CTA -->
       <section id="cta" class="section section-cta reveal">
@@ -198,7 +239,7 @@ Through residencies, workshops, and performances, the project aims to connect ar
     </main>
 
     <!-- Footer -->
-     <footer class="footer">
+    <footer class="footer">
       <div class="container footer-content">
         <div class="footer-col">
           <h4>Explore</h4>
@@ -231,13 +272,15 @@ Through residencies, workshops, and performances, the project aims to connect ar
             >contact@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-            For partnerships, collaborations, press, or general inquiries. Our team will get back to you shortly.
+            For partnerships, collaborations, press, or general inquiries. Our
+            team will get back to you shortly.
           </p>
           <a href="mailto:hello@soundsofmorocco.com" class="footer-email"
             >demos@soundsofmorocco.com</a
           >
           <p class="footer-contact-text">
-             Share your tracks and join the movement. We’re always open to discovering new Moroccan sounds.
+            Share your tracks and join the movement. We’re always open to
+            discovering new Moroccan sounds.
           </p>
         </div>
 
@@ -249,35 +292,40 @@ Through residencies, workshops, and performances, the project aims to connect ar
               target="_blank"
               class="social-icon instagram"
               aria-label="Instagram"
-            ><i class="fab fa-instagram"></i></a>
+              ><i class="fab fa-instagram"></i
+            ></a>
 
             <a
               href="https://www.tiktok.com/@sounds_of_morocco?_r=1&_t=ZS-91GIyKqxFSc"
               target="_blank"
               class="social-icon tiktok"
               aria-label="TikTok"
-            ><i class="fab fa-tiktok"></i></a>
+              ><i class="fab fa-tiktok"></i
+            ></a>
 
             <a
               href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=VPeUCfCNR9iO3cZiwpSlcw"
               target="_blank"
               class="social-icon spotify"
               aria-label="Spotify"
-            ><i class="fab fa-spotify"></i></a>
+              ><i class="fab fa-spotify"></i
+            ></a>
 
             <a
               href="https://soundcloud.com/yasweeyzz"
               target="_blank"
               class="social-icon soundcloud"
               aria-label="SoundCloud"
-            ><i class="fab fa-soundcloud"></i></a>
+              ><i class="fab fa-soundcloud"></i
+            ></a>
 
             <a
               href="https://www.youtube.com/channel/UCk_9jPa3RSS1MCIorhxtpfg"
               target="_blank"
               class="social-icon youtube"
               aria-label="YouTube"
-            ><i class="fab fa-youtube"></i></a>
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>

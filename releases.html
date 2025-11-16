@@ -1,73 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Releases — Sounds of Morocco</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.svg">
-  <link rel="stylesheet" href="assets/css/styles.css">
-      <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-</head>
-<body>
-<header class="header">
-  <div class="container nav">
-  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="Sounds of Morocco"><span>Sounds of Morocco</span></a>
-      <nav class="menu" id="menu">
-      <a href="about.html">About</a><a href="releases.html">Releases</a><a href="partners.html">Partners</a><a href="music.html">Music</a><a href="news.html">News</a><a href="merch.html">Merch</a><a class="cta-submit" href="submit.html">Submit</a>
-    </nav>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <head>
+    <meta charset="utf-8" />
+    <title>Releases — Sounds of Morocco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Releases — Sounds of Morocco. Discover our latest music releases, collaborations and cultural projects."
+    />
+  <!-- Favicon (SVG + PNG fallback) -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png">
+
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/releases.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="about releases">
+    <!-- Header -->
+    <header class="header">
+      <div class="container nav">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="Sounds of Morocco" />
+          <span>Sounds of Morocco</span>
+        </a>
+        <nav class="menu" id="menu">
+          <a href="about.html">About</a>
+          <a href="releases.html" aria-current="page">Releases</a>
+          <a href="partners.html">Partners</a>
+          <a href="music.html">Music</a>
+          <a href="news.html">News</a>
+          <a href="merch.html">Merch</a>
+          <a class="cta-submit" href="submit.html">Submit</a>
+        </nav>
+        <button class="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO (About-style) -->
+    <section class="hero hero--about">
+      <div class="container">
+        <h1 class="display">Releases</h1>
+        <p class="lead">Explore our latest music releases, cultural collaborations and artistic projects from Moroccan and global artists.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <nav class="subnav">
+          <a href="#releases">All Releases</a>
+          <a href="#latest">Latest</a>
+          <a href="#featured">Featured</a>
+          <a href="#archive">Archive</a>
+        </nav>
+      </div>
+    </section>
+
+    <main class="after-hero">
+
+      <!-- Releases Grid -->
+      <section id="releases" class="section reveal">
+        <div class="container">
+          <h2 class="orange">Latest Releases</h2>
+          
+          <div class="filters" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <span class="chip active" data-key="year" data-filter="">All</span>
+            <span class="chip" data-key="genre" data-filter="gnawa">Gnawa</span>
+            <span class="chip" data-key="genre" data-filter="electronic">Electronic</span>
+            <span class="chip" data-key="genre" data-filter="chaabi">Chaâbi</span>
+           
+          </div>
+
+          <div class="grid" style="gap:14px">
+            <!-- Release item -->
+            <article class="release" data-genre="electronic" data-artist="Yas.Weeyzz" data-year="2025">
+              <img class="cover" src="assets/img/tamagitcover.jfif" alt="Desert Echoes" />
+              <div class="meta">
+                <div class="title">Tamagit</div>
+                <div class="sub"> <strong>Yas.Weeyzz · Salah Fafah · Simvne </strong></div>
+              </div>
+              <audio class="audio" controls preload="none" src=""></audio>
+            </article>
+
+            
+          </div>
+        </div>
+      </section>
+
+<section id="featured" class="section section-cta reveal">
+  <div class="container">
+    <div class="card cta-card">
+      <h2 class="orange">Discover More</h2>
+      <p>
+        Explore our universe of Moroccan sounds. Follow us on Spotify to stay updated with new releases, exclusive drops, and curated playlists.
+      </p>
+
+      <div class="cta-actions">
+        <a
+          href="https://open.spotify.com/artist/4V2RwcUge3qCGrQHt8fd8Y?si=7brEPfnuTjOVbKTDntSkZA"
+          target="_blank"
+          class="btn btn-primary spotify-btn"
+          aria-label="Listen to Sounds of Morocco on Spotify"
+        >
+          <i class="fab fa-spotify"></i>
+          Listen on Spotify
+        </a>
+      </div>
+    </div>
   </div>
-</header>
 
-<section class="section">
-  <div class="container reveal">
-    <div class="section-title">
-      <span class="pill">Releases</span>
-      <span class="badge">Latest</span>
-    </div>
-    <div class="filters">
-      <span class="chip active" data-key="year" data-filter="">All</span>
-      <span class="chip" data-key="genre" data-filter="gnawa">Gnawa</span>
-      <span class="chip" data-key="genre" data-filter="electronic">Electronic</span>
-      <span class="chip" data-key="genre" data-filter="chaabi">Chaâbi</span>
-      <span class="chip" data-key="year" data-filter="2025">2025</span>
-      <span class="chip" data-key="year" data-filter="2024">2024</span>
-      <span class="chip" data-key="artist" data-filter="Yas">Yas.Weeyzz</span>
-    </div>
-
-    <div class="grid" style="gap:14px">
-      <!-- Release item -->
-      <article class="release" data-genre="electronic" data-artist="Yas.Weeyzz" data-year="2025">
-        <img class="cover" src="assets/img/hero.jpg" alt="">
-        <div class="meta">
-          <div class="title">Desert Echoes (Original Mix)</div>
-          <div class="sub">Yas.Weeyzz · 2025 · Electronic</div>
-        </div>
-        <audio class="audio" controls preload="none" src=""></audio>
-      </article>
-
-      <article class="release" data-genre="gnawa" data-artist="Various" data-year="2024">
-        <img class="cover" src="assets/img/hero.jpg" alt="">
-        <div class="meta">
-          <div class="title">Gnawa Pulse (Live Session)</div>
-          <div class="sub">Various Artists · 2024 · Gnawa</div>
-        </div>
-        <audio class="audio" controls preload="none"></audio>
-      </article>
-
-      <article class="release" data-genre="chaabi" data-artist="Amal Mzerd" data-year="2024">
-        <img class="cover" src="assets/img/hero.jpg" alt="">
-        <div class="meta">
-          <div class="title">Marrakech Nights</div>
-          <div class="sub">Amal Mzerd · 2024 · Chaâbi</div>
-        </div>
-        <audio class="audio" controls preload="none"></audio>
-      </article>
-    </div>
-  </div>
+  <br>
+  <br>
+  <br>
+  <br>
 </section>
+
+
+    </main>
+
+    <!-- Footer -->
+
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
 
      <footer class="footer">
       <div class="container footer-content">
