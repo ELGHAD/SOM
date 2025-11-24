@@ -2,8 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Submit Your Music — Sounds of Morocco</title>
+    <title>Submit Your Music — Sounds of Morocco | Demo Submission</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Submit your demo to Sounds of Morocco, an independent Moroccan electronic music label and cultural project. Share your tracks via private links (Drive, WeTransfer, YouTube, SoundCloud) and join the movement."
+    />
+    <meta
+      name="keywords"
+      content="submit demo, demo submission, send your music, Sounds of Morocco, Moroccan electronic music label, independent label Morocco, send track, producer submission, DJ demo"
+    />
+    <link rel="canonical" href="https://www.soundsofmorocco.com/submit.html" />
+
     <!-- Favicon (SVG + PNG fallback) -->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg" />
     <link
@@ -24,6 +34,67 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Submit Your Music — Sounds of Morocco"
+    />
+    <meta
+      property="og:description"
+      content="Send your demo to Sounds of Morocco, an independent Moroccan electronic music label and cultural project. Share your tracks and join the movement."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.soundsofmorocco.com/submit.html"
+    />
+    <meta
+      property="og:image"
+      content="https://www.soundsofmorocco.com/assets/img/hero.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Sounds of Morocco — Submit your music demo"
+    />
+    <meta property="og:site_name" content="Sounds of Morocco" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Submit Your Music — Sounds of Morocco"
+    />
+    <meta
+      name="twitter:description"
+      content="Share your tracks with Sounds of Morocco. Submit your demo via private links and connect with an independent Moroccan electronic music label."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.soundsofmorocco.com/assets/img/hero.jpg"
+    />
+
+    <!-- JSON-LD (WebPage + potentialAction for submissions) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.soundsofmorocco.com/submit.html",
+        "url": "https://www.soundsofmorocco.com/submit.html",
+        "name": "Submit Your Music — Sounds of Morocco",
+        "description": "Demo submission page for Sounds of Morocco, an independent Moroccan electronic music label, distribution platform and cultural project.",
+        "publisher": {
+          "@type": "MusicGroup",
+          "@id": "https://www.soundsofmorocco.com/#musicgroup",
+          "name": "Sounds of Morocco"
+        },
+        "potentialAction": {
+          "@type": "CommunicateAction",
+          "target": "https://www.soundsofmorocco.com/submit.html",
+          "description": "Submit your demo and artist information to Sounds of Morocco."
+        }
+      }
+    </script>
   </head>
   <body class="submit-page">
     <header class="header">
@@ -114,7 +185,7 @@
                 id="genre"
                 name="genre"
                 rows="5"
-                placeholder="Tell us about the genre of ur drop"
+                placeholder="Tell us about the genre, style and mood of your track"
                 inputmode=""
               />
             </div>
@@ -140,7 +211,7 @@
               id="message"
               name="Message"
               rows="5"
-              placeholder="Tell us about the project… influences, release plans, references, etc."
+              placeholder="Tell us about the project, influences, release plans, labels you like, references, etc."
             ></textarea>
           </div>
 
@@ -161,7 +232,10 @@
             </button>
           </div>
 
-          <p class="help">Please fill this form.</p>
+          <p class="help">
+            Please fill in all required fields and share a private streaming or
+            download link. Our A&amp;R team will review every submission.
+          </p>
         </form>
       </div>
     </section>

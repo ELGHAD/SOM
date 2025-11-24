@@ -2,33 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Releases — Sounds of Morocco</title>
+    <title>Music Releases — Moroccan Electronic & Cultural Projects | Sounds of Morocco</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta
       name="description"
-      content="Releases — Sounds of Morocco. Discover our latest music releases, collaborations and cultural projects."
+      content="Explore the latest music releases from Sounds of Morocco — a Moroccan independent electronic music label and cultural project. Discover tracks, collaborations, Gnawa fusion, Moroccan electronic blends, and artist projects led by Yas.Weeyzz."
     />
-    <!-- Favicon (SVG + PNG fallback) -->
+
+    <meta
+      name="keywords"
+      content="Moroccan music releases, electronic music Morocco, Gnawa fusion, Sounds of Morocco label, Yas.Weeyzz tracks, Moroccan producers, North African music, independent label Morocco, cultural music projects"
+    />
+
+    <link rel="canonical" href="https://www.soundsofmorocco.com/releases.html" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicone.svg" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/img/favicone.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="256x256"
-      href="assets/img/favicone.png"
-    />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicone.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicone.png" />
 
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/releases.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Music Releases — Sounds of Morocco" />
+    <meta property="og:description" content="Discover our newest Moroccan electronic music releases, cultural collaborations, and artist projects." />
+    <meta property="og:image" content="https://www.soundsofmorocco.com/assets/img/hero.jpg" />
+    <meta property="og:url" content="https://www.soundsofmorocco.com/releases.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sounds of Morocco" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Releases — Sounds of Morocco" />
+    <meta name="twitter:description" content="Explore Moroccan electronic music, Gnawa fusion, and cultural projects by Sounds of Morocco." />
+    <meta name="twitter:image" content="https://www.soundsofmorocco.com/assets/img/hero.jpg" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Sounds of Morocco",
+        "url": "https://www.soundsofmorocco.com",
+        "genre": "Electronic, Gnawa Fusion, Moroccan Traditional",
+        "description": "Sounds of Morocco is a Moroccan independent electronic music label and cultural project promoting local and international artists.",
+        "albumRelease": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Tamagit",
+            "byArtist": "Yas.Weeyzz",
+            "url": "https://www.soundsofmorocco.com/releases.html"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body class="about releases">
@@ -54,18 +85,15 @@
       </div>
     </header>
 
-    <!-- HERO (About-style) -->
+    <!-- HERO -->
     <section class="hero hero--about">
       <div class="container">
         <h1 class="display">Releases</h1>
         <p class="lead">
-          Explore our latest music releases, cultural collaborations and
-          artistic projects from Moroccan and global artists.
+          Discover Moroccan electronic music, Gnawa fusion, cultural collaborations, and artistic releases from our roster of emerging and established talent.
         </p>
-        <br />
-        <br />
-        <br />
-        <br />
+
+        <br /><br /><br /><br />
 
         <nav class="subnav">
           <a href="#releases">All Releases</a>
@@ -77,7 +105,7 @@
     </section>
 
     <main class="after-hero">
-      <!-- Releases Grid -->
+      <!-- Releases Section -->
       <section id="releases" class="section reveal">
         <div class="container">
           <h2 class="orange">Latest Releases</h2>
@@ -85,16 +113,11 @@
           <div class="filters" style="margin-top: 1rem; margin-bottom: 2rem">
             <span class="chip active" data-key="year" data-filter="">All</span>
             <span class="chip" data-key="genre" data-filter="gnawa">Gnawa</span>
-            <span class="chip" data-key="genre" data-filter="electronic"
-              >Electronic</span
-            >
-            <span class="chip" data-key="genre" data-filter="chaabi"
-              >Chaâbi</span
-            >
+            <span class="chip" data-key="genre" data-filter="electronic">Electronic</span>
+            <span class="chip" data-key="genre" data-filter="chaabi">Chaâbi</span>
           </div>
 
           <div class="grid" style="gap: 14px">
-            <!-- Release item -->
             <article
               class="release"
               data-genre="electronic"
@@ -104,12 +127,12 @@
               <img
                 class="cover"
                 src="assets/img/tamagitcover.jfif"
-                alt="Desert Echoes"
+                alt="Tamagit — Moroccan electronic fusion track by Yas.Weeyzz, Salah Fafah and Simvne"
               />
               <div class="meta">
                 <div class="title">Tamagit</div>
                 <div class="sub">
-                  <strong>Yas.Weeyzz · Salah Fafah · Simvne </strong>
+                  <strong>Yas.Weeyzz · Salah Fafah · Simvne</strong>
                 </div>
               </div>
               <audio class="audio" controls preload="none" src=""></audio>
@@ -118,14 +141,13 @@
         </div>
       </section>
 
+      <!-- Spotify CTA -->
       <section id="featured" class="section section-cta reveal">
         <div class="container">
           <div class="card cta-card">
             <h2 class="orange">Discover More</h2>
             <p>
-              Explore our universe of Moroccan sounds. Follow us on Spotify to
-              stay updated with new releases, exclusive drops, and curated
-              playlists.
+              Dive deeper into the Sounds of Morocco universe. Follow our artist catalog, curated playlists, and exclusive Moroccan electronic music drops on Spotify.
             </p>
 
             <div class="cta-actions">
@@ -142,12 +164,19 @@
           </div>
         </div>
 
-        <br />
-        <br />
-        <br />
-        <br />
+        <br /><br /><br /><br />
       </section>
     </main>
+
+    <!-- FOOTER (unchanged) -->
+    <footer class="footer">
+      ...
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
+
 
     <!-- Footer -->
     <footer class="footer">
