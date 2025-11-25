@@ -47,7 +47,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://www.soundsofmorocco.com/"
+      content="https://soundsofmorocco.com/"
     />
     <meta
       property="og:image"
@@ -107,6 +107,39 @@
   </head>
 
   <!-- IMPORTANT: add class="home" so CSS overrides affect only this page -->
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const teaser = document.getElementById("event-teaser");
+    const popupOverlay = document.getElementById("event-popup");
+    const closeBtn = document.getElementById("event-popup-close");
+
+    if (!teaser || !popupOverlay) return;
+
+    // When user clicks the mini box → open popup
+    teaser.addEventListener("click", function () {
+      popupOverlay.classList.add("is-visible");
+    });
+
+    // Close popup with X button
+    closeBtn.addEventListener("click", function () {
+      popupOverlay.classList.remove("is-visible");
+    });
+
+    // Close when clicking outside the popup card
+    popupOverlay.addEventListener("click", function (e) {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove("is-visible");
+      }
+    });
+  });
+</script>
+
+
+
+
   <body class="home">
     <!-- Header -->
     <header class="header">
@@ -129,6 +162,65 @@
         </button>
       </div>
     </header>
+
+
+
+
+
+
+    <!-- MINI EVENT TEASER (always visible) -->
+<div id="event-teaser" class="event-teaser">
+  <span class="event-dot"></span>
+ <span class="event-teaser-text">Event Alert — Tap to see</span>
+</div>
+
+<!-- EVENT POPUP (hidden until click) -->
+<div id="event-popup" class="event-popup-overlay">
+  <div class="event-popup">
+    <button class="event-popup-close" id="event-popup-close" aria-label="Close popup">
+      &times;
+    </button>
+
+    <div class="event-popup-content">
+      <!-- Left: Event image (optional) -->
+      <div class="event-popup-image">
+        <img src="assets/img/yasserevent.jfif"
+             alt="Macro Disco - Sounds of Morocco event poster" />
+      </div>
+
+      <!-- Right: Event text -->
+      <div class="event-popup-text">
+        <span class="event-tag">Event Incoming</span>
+        <h3>MACRO DISCO – Rooftop, Institut Français de Rabat</h3>
+
+        <p class="event-info">
+          <strong>Samedi 29 Novembre • 20h00</strong><br />
+          Entrée gratuite – places limitées.
+        </p>
+
+        <p>
+          Confirm your presence now to secure your spot at
+          <strong>MACRO DISCO</strong> with <strong>Yas.Weeyzz</strong>.
+        </p>
+
+        <a href="https://forms.gle/i6ryisdvCowcvcj29"
+           target="_blank"
+           rel="noopener"
+           class="event-popup-btn">
+          Confirm my presence
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
     <!-- Hero (full viewport under header) -->
     <section class="hero">
