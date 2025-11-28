@@ -321,7 +321,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach((el) => obs.observe(el));
 })();
 
-
+/* ===============================
+   HOME PAGE HERO SECTION
+   =============================== */
+   /* ===============================
+   HOME PAGE HERO SECTION
+   =============================== */
 document.addEventListener("DOMContentLoaded", () => {
   const vid = document.querySelector(".hero-video");
 
