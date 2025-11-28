@@ -223,32 +223,54 @@
 
 
     <!-- Hero (full viewport under header) -->
-    <section class="hero">
-      <div class="container">
-        <h1 class="display">Unveiling Moroccan Talent, Celebrating Culture</h1>
-        <p class="subtitle">
-          Sounds of Morocco is a 100% independent
-          <strong>Moroccan electronic music label</strong>, supporting Moroccan
-          DJs and producers as well as international talent. More than a label,
-          it’s a cultural project led by producer
-          <strong>Yas.Weeyzz</strong>, celebrating music, creativity, and the
-          rich Moroccan heritage through innovative electronic productions and
-          artistic collaborations, while helping artists release their music
-          worldwide on major platforms.
-        </p>
-        <div
-          style="
-            display: flex;
-            gap: 1.8rem;
-            justify-content: center;
-            flex-wrap: wrap;
-          "
-        >
-          <a class="btn btn-primary" href="releases.html">Discover Releases</a>
-          <a class="btn btn-outline" href="submit.html">Submit Your Music</a>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <!-- Background video -->
+<video
+  class="hero-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  poster="assets/img/hero.jpg"
+>
+  <!-- Mobile version (faster) -->
+  <source src="assets/img/hero-bg.mp4" media="(max-width: 768px)" type="video/mp4">
+
+  <!-- Desktop HD version -->
+  <source src="assets/img/hero-bg.mp4" type="video/mp4">
+</video>
+
+  <!-- Dark / gradient overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero content -->
+  <div class="container hero-content">
+    <h1 class="display">Unveiling Moroccan Talent, Celebrating Culture</h1>
+    <p class="subtitle">
+      Sounds of Morocco is a 100% independent
+      <strong>Moroccan electronic music label</strong>, supporting Moroccan
+      DJs and producers as well as international talent. More than a label,
+      it’s a cultural project led by producer
+      <strong>Yas.Weeyzz</strong>, celebrating music, creativity, and the
+      rich Moroccan heritage through innovative electronic productions and
+      artistic collaborations, while helping artists release their music
+      worldwide on major platforms.
+    </p>
+    <div
+      style="
+        display: flex;
+        gap: 1.8rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      "
+    >
+      <a class="btn btn-primary" href="releases.html">Discover Releases</a>
+      <a class="btn btn-outline" href="submit.html">Submit Your Music</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- After-hero wrapper: blue/black gradient background for the rest -->
     <main class="after-hero">

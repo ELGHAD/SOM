@@ -320,3 +320,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".page-music .reveal")
     .forEach((el) => obs.observe(el));
 })();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const vid = document.querySelector(".hero-video");
+
+  vid.addEventListener("loadeddata", () => {
+    vid.classList.add("loaded");
+  });
+});
+
