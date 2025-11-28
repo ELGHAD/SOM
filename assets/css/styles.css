@@ -3312,36 +3312,9 @@ body.page-music::after{
     max-height: 260px;
   }
 }
-@media (max-width: 480px) {
-  .event-teaser {
-    right: 8px;
-    bottom: 14px;
-    padding: 7px 12px 7px 9px;
-    transform: scale(0.88);   /* Makes it smaller and fits perfectly */
-  }
-
-  .event-teaser-text {
-    font-size: 0.78rem; /* More compact */
-  }
-
-  .event-dot {
-    width: 8px;
-    height: 8px;
-  }
-}
-@media (max-width: 360px) {
-  .event-teaser {
-    transform: scale(0.75);
-  }
-}
-
 
 /* ===============================
-   HOME PAGE HERO SECTION
-   =============================== */
-   /* ===============================
-   HOME PAGE HERO SECTION
-   =============================== */
+   
 
 /* HERO CONTAINER */
 .home .hero {
